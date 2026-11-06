@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-11-06T15:05:08.707Z",
+  "base": "https://notfound404-production.up.railway.app",
+  "result": "pass",
+  "results": [
+    {
+      "path": "/index.html",
+      "status": 200,
+      "bytes": 18290,
+      "sha256": "68225ee2624c0cb2f271e8e9e171000aec2af8b549d1041f57f44e9fed46af70",
+      "matches_source": true
+    },
+    {
+      "path": "/app.js",
+      "status": 200,
+      "bytes": 5738,
+      "sha256": "b3b7a22eaf5c740c8d929bda28cf2102f73d9d1094a5cf433148293ab8b3e7de",
+      "matches_source": true
+    },
+    {
+      "path": "/styles.css",
+      "status": 200,
+      "bytes": 20682,
+      "sha256": "1032f50002518078dd0be7a986d44d93ce03aaf904cfb089ff6b13987e238fb6",
+      "matches_source": true
+    },
+    {
+      "path": "/validation.mjs",
+      "status": 200,
+      "bytes": 784,
+      "sha256": "f16b3089d4ce9067f9279af424c4a13d6ad2ce0bfd0428c89de25ba0f81437f0",
+      "matches_source": true
+    },
+    {
+      "path": "/assets/fonts.css",
+      "status": 200,
+      "bytes": 2202,
+      "sha256": "7c15468f83e1141d824206dbb283b1200f8fe2a005819440ca219663904bcbe5",
+      "matches_source": true
+    },
+    {
+      "path": "/assets/mobile-25a51.png",
+      "status": 200,
+      "bytes": 1473947,
+      "sha256": "6b7eaa9324d89f6c9570a07da64df28d631998832201fbd432ee0678aa95a28e",
+      "matches_source": true
+    },
+    {
+      "path": "/assets/fonts/noto-1.ttf",
+      "status": 200,
+      "bytes": 116496,
+      "sha256": "9f48a34dff084ee8872b46516c1e809838a39fa1cbc3326fcb9d99c8b883c26b",
+      "matches_source": true
+    },
+    {
+      "path": "/tasks/current/state.json",
+      "status": 404
+    },
+    {
+      "path": "/.env",
+      "status": 404
+    }
+  ]
+}

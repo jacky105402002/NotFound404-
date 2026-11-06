@@ -1,9 +1,16 @@
 {
-  "status": "ready",
+  "status": "verified",
   "version": "0.1.0",
   "target": "GitHub jacky105402002/NotFound404- main → Railway public website",
   "authorization_source": "2026-11-06 使用者明確要求 push 指定儲存庫並設定 Railway 對外連動",
-  "deployment_evidence": [],
-  "verification_evidence": [],
-  "notes": "部署準備；表單仍為不傳送資料的預覽。"
+  "deployment_evidence": [
+    "tasks/current/reports/node-002/attempt-02/github-push.md",
+    "tasks/current/release-record.md",
+    "tasks/current/reports/node-002/attempt-02/railway-live.png"
+  ],
+  "verification_evidence": [
+    "tasks/current/reports/node-002/attempt-02/live-smoke.json",
+    "tasks/current/reports/node-002/attempt-02/live-homepage.png"
+  ],
+  "notes": "GitHub main 與 Railway 公開部署已驗證；https://notfound404-production.up.railway.app/；保留無傳送的預覽表單與 noindex。"
 }

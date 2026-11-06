@@ -1,4 +1,10 @@
 # 工作室專案交接
+## 最新交接：GitHub 與 Railway 已上線
+2026-11-06 使用者後續明確授權 push/deploy，取代下方歷史範圍。NotFound404 V2 已推送到 jacky105402002/NotFound404- main，Railway 已連動自動部署。
+公開網站：https://notfound404-production.up.railway.app/ 。實際發布、smoke、限制與回復方式見 [release-record.md](release-record.md)，唯一狀態仍為 state.json。
+保留預覽表單、不寄送／持久化、概念案例與 noindex。既有 Railway App 為所有儲存庫存取，本輪未更動其權限。
+
+## 以下為網站實作完成時的歷史交接
 更新：2026-11-06，Asia/Taipei。
 ## 本次授權與決策
 使用者要求最新 MingMing 產出網站；已明確回覆 NotFound404、V2、可操作但不傳送資料的預覽表單、非政府標案。新授權取代先前只準備資料的範圍；仍未授權 commit/push/deploy。

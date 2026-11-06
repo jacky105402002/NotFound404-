@@ -82,7 +82,7 @@
       }
     ],
     "release": {
-      "status": "ready",
+      "status": "verified",
       "record": "tasks/current/release.json"
     },
     "security": {
