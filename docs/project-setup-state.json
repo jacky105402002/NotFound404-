@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "mode": "active",
+  "feature": {
+    "id": "notfound404-studio-website",
+    "route": "full-loop",
+    "risk": "medium",
+    "status": "draft",
+    "spec": "tasks/current/feature-spec.md",
+    "acceptance_criteria": [
+      {
+        "id": "AC-SETUP-01",
+        "description": "沿用既有專案並保存已查證 v1.1.3 工作流來源。"
+      },
+      {
+        "id": "AC-SETUP-02",
+        "description": "保留 Figma 交接及待確認項目供後續開發。"
+      },
+      {
+        "id": "AC-SETUP-03",
+        "description": "明確區分準備完成與網站尚未實作。"
+      }
+    ],
+    "stages": [],
+    "release": {
+      "status": "not_requested",
+      "record": null
+    },
+    "security": {
+      "government_project": "unknown",
+      "plan": null
+    }
+  },
+  "nodes": [],
+  "questions": [
+    {
+      "id": "Q-BRAND",
+      "question": "對外品牌是 NoFound404 還是 NotFound404？",
+      "impact": "影響網站標誌、文案、metadata 與對外識別。",
+      "blocking": true,
+      "node_ids": [],
+      "status": "open",
+      "sources_checked": [
+        "使用者原始專案名稱",
+        "Figma 檔案及先前設計檢查"
+      ],
+      "answer": null,
+      "resolution_source": null
+    },
+    {
+      "id": "Q-DESIGN",
+      "question": "原版或 V2 是網站實作基準？",
+      "impact": "影響整頁布局與響應式驗收，V2 目前僅為候選。",
+      "blocking": true,
+      "node_ids": [],
+      "status": "open",
+      "sources_checked": [
+        "Figma Landing Page 版本列表",
+        "使用者尚未選定版本"
+      ],
+      "answer": null,
+      "resolution_source": null
+    },
+    {
+      "id": "Q-FORM",
+      "question": "諮詢表單要送到哪裡，必填欄位、資料處理與各狀態如何驗收？",
+      "impact": "影響資料、權限、後端介面與成功／失敗行為。",
+      "blocking": true,
+      "node_ids": [],
+      "status": "open",
+      "sources_checked": [
+        "先前 Figma 檢查：缺提交與狀態規格"
+      ],
+      "answer": null,
+      "resolution_source": null
+    },
+    {
+      "id": "Q-GOV",
+      "question": "本專案是否涉及台灣政府標案（含委外、維運或分包）？",
+      "impact": "MingMing 新開發分流需要這個答案，不能自行定級。",
+      "blocking": true,
+      "node_ids": [],
+      "status": "open",
+      "sources_checked": [
+        "本次網站用途說明",
+        "MingMing docs/intake.md"
+      ],
+      "answer": null,
+      "resolution_source": null
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-PROJECT",
+      "decision": "沿用使用者建立的工作室專案。",
+      "reason": "避免建立重複專案。",
+      "source": "使用者與主線確認，2026-11-06。"
+    },
+    {
+      "id": "D-WORKFLOW",
+      "decision": "採用 MingMing v1.1.3 固定版。",
+      "reason": "使用者指定最新工作流，GitHub latest release 與 main 已核對。",
+      "source": "https://github.com/jacky105402002/MingMing-AI-Product-Engineering-Loop/releases/tag/v1.1.3"
+    },
+    {
+      "id": "D-SCOPE",
+      "decision": "本輪只完成工作流與專案準備，不開始網站實作或發布。",
+      "reason": "設計與品牌等重要決策尚未確認，本輪任務是建立開發專案。",
+      "source": "使用者原始請求與主線交接，2026-11-06。"
+    }
+  ]
+}

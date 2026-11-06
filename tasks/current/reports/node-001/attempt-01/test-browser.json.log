@@ -1,0 +1,8 @@
+["powershell","-NoProfile","-File","website/tests/run-browser-tests.ps1"]
+node.exe : 
+��� C:\Users\user\AppData\Roaming\npm\playwright-cli.ps1:24 �r��:5
++     & "node$exe"  "$basedir/node_modules/@playwright/cli/playwright-c ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

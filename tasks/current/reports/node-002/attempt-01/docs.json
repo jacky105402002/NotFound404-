@@ -1,0 +1,288 @@
+{
+  "node_id": "node-002",
+  "revision": "r1",
+  "kind": "docs",
+  "result": "pass",
+  "created_at": "2026-11-06T14:53:30.403Z",
+  "command": null,
+  "exit_code": null,
+  "ac_ids": [
+    "AC-DEPLOY-01"
+  ],
+  "artifacts": [
+    {
+      "path": "tasks/current/reports/node-002/attempt-01/docs.md",
+      "sha256": "090e1462bd66008325644e7465bf4eace505c28fc144f61a3ca83901f01371d1"
+    }
+  ],
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "22736139fc67495ba25a7a7f2c0965f4ab205364f2344891862ec9a08c691160"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "3314816d30bc52512dbdbc6f3f2f7c0bc95e5580f46f4c33697b2ef81a6c6e32"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "45cc42d87a4aabf0cd2455098745a1f226fae2f0f312c7a964b828aae7efaeb5"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "2ff214a077fc560af7a929246557d6d2a2bf6adc4f4e3f7a9b1d6856462b0194"
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "sha256": "84b616311643328008ab9d07db2b2abab1e10e80098482573f4f7c8979a6b7ac"
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "10125d022af1e800b4220e326cfd5e9958eb0df1571adb3d5bde983f8ed1761e"
+    },
+    {
+      "path": "README.md",
+      "sha256": "fc9244a6fad048047c263255cf6af8a1f8125ce1750122559a58661e2076bcf4"
+    },
+    {
+      "path": "ai-workflow/tool-map.md",
+      "sha256": "81ed44cfebaa8701077ee9b0158447b6804bc50f35d432f8f316aad7f75f6e76"
+    },
+    {
+      "path": "docs/figma-handoff.md",
+      "sha256": "42a9e2af67420d20fd56a999b2eb8c78bc1ee334f703b170b2f3db84ab8408a1"
+    },
+    {
+      "path": "docs/intake.md",
+      "sha256": "567bc2588b7669412e383c53beeaea334df3c465cb4830fc0c04e21e6acbbede"
+    },
+    {
+      "path": "docs/website-design.md",
+      "sha256": "84fe2a4539a221147a8516a2e006978754737cf1d94efdaa31e27dcb853bd103"
+    },
+    {
+      "path": "tasks/current/feature-spec.md",
+      "sha256": "00b15e31c683d2a395d02d2ddab2bd2336c6e956b1f41a63690b7928f22222af"
+    },
+    {
+      "path": "tasks/current/node-001.md",
+      "sha256": "019e32bf8a857564ab464e6ccef5b8b14010e57656ac1b0ee6d1a2ded234fefa"
+    },
+    {
+      "path": "tasks/current/node-002.md",
+      "sha256": "a5d6f38b0274944e3199dae4b81deb3d4de67c065680ee9dfb59937758442d5d"
+    },
+    {
+      "path": "website/README.md",
+      "sha256": "cedb93e0ba4ccbb0a3b22d54b7f47fa8b0fc03e2371fc974f07b94b79fd27fdf"
+    },
+    {
+      "path": "website/asset-manifest.json",
+      "sha256": "5d3900154354d6a331b481c87f1549681775c2c6e33702dd83c0b2125992c6ef"
+    },
+    {
+      "path": "website/download-assets.ps1",
+      "sha256": "1c65a64187c34f293fbf576127e08f8c7d1a6d3caf227c4995f12f93b0db1efb"
+    },
+    {
+      "path": "website/download-fonts.ps1",
+      "sha256": "314090ee05730859a8cc30e9cfc96dd47692c4b0c26552e56f41211e8aa9654e"
+    },
+    {
+      "path": "website/licenses/Geist-OFL.txt",
+      "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f"
+    },
+    {
+      "path": "website/licenses/JetBrainsMono-OFL.txt",
+      "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d"
+    },
+    {
+      "path": "website/licenses/MaterialSymbols-LICENSE.txt",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "path": "website/licenses/NotoSansTC-OFL.txt",
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    },
+    {
+      "path": "website/package.json",
+      "sha256": "12a6352cafe3bed00158b974ad78e439144408ed8ab41c05ca1ca685ad51e360"
+    },
+    {
+      "path": "website/production.mjs",
+      "sha256": "ad44269fbb022c15c07beb7e50f8cc2c4546fddf3ac8a2f709bb341b56987789"
+    },
+    {
+      "path": "website/public/app.js",
+      "sha256": "b3b7a22eaf5c740c8d929bda28cf2102f73d9d1094a5cf433148293ab8b3e7de"
+    },
+    {
+      "path": "website/public/assets/desktop-0605d.svg",
+      "sha256": "40915fc435325df2c38e67164b91aed2a795000da9c95663cc1df4fab510490b"
+    },
+    {
+      "path": "website/public/assets/desktop-10a0f.svg",
+      "sha256": "adb3addd4d5a19c694962d18eec95a27c05846d3d18c0d90decb318df21ac3ec"
+    },
+    {
+      "path": "website/public/assets/desktop-1b10e.svg",
+      "sha256": "17e9684ea018110f48f0940bf9ce9c3967646dcbd899d512914ddebd0ceae5bf"
+    },
+    {
+      "path": "website/public/assets/desktop-39e80.svg",
+      "sha256": "f88966f7f658773aec8cc4c7d35a107c67455bd97203c692409a449b594f3c4d"
+    },
+    {
+      "path": "website/public/assets/desktop-4dc8f.svg",
+      "sha256": "604b67f2ab697465464e0b3992a372fc78851bc9646c4e9f1dd20d67b0b0feff"
+    },
+    {
+      "path": "website/public/assets/desktop-72a93.svg",
+      "sha256": "ab20db7f669649f8e61fee143e503f048b7f254f528604664c2d274f6818c1fd"
+    },
+    {
+      "path": "website/public/assets/desktop-b3517.svg",
+      "sha256": "cb7fbebac1cb358bba050950112c30b3c27b9fb26784e351213bf613f30b2579"
+    },
+    {
+      "path": "website/public/assets/desktop-be313.svg",
+      "sha256": "3b77bfbfa759368ed00302169234db72449f35ea891beb5832c702f4e2d5bcb7"
+    },
+    {
+      "path": "website/public/assets/desktop-db2fb.svg",
+      "sha256": "f3806f6dadd2ccfbb86a793cf9b9182115ca3dcacbe1101fe2d08af0165fdeb2"
+    },
+    {
+      "path": "website/public/assets/fonts.css",
+      "sha256": "7c15468f83e1141d824206dbb283b1200f8fe2a005819440ca219663904bcbe5"
+    },
+    {
+      "path": "website/public/assets/fonts/geist-1.ttf",
+      "sha256": "c6c184f3a50e0e5b8b42ac411354b6b448c07dd2f569e07e31dbf4a94f187cc3"
+    },
+    {
+      "path": "website/public/assets/fonts/geist-2.ttf",
+      "sha256": "b560071e003697ed127d80ffaf55f810b9d29d1f7f5dd88c7185543e3dd03b1c"
+    },
+    {
+      "path": "website/public/assets/fonts/geist-3.ttf",
+      "sha256": "de7b46cfcec6416e1e85a5fb4eb0d9c9ae6e17cded146e9d4fff3d464a39e19d"
+    },
+    {
+      "path": "website/public/assets/fonts/geist-4.ttf",
+      "sha256": "8eb2a30f930e311ebd9c48e4960bd733408c8ecf873174b46cb527e127673eb2"
+    },
+    {
+      "path": "website/public/assets/fonts/mono-1.ttf",
+      "sha256": "609c1623d044463c4a09f2a6b7d7bb74d0b5ea0dabed29a4c6916509dc0eb9b7"
+    },
+    {
+      "path": "website/public/assets/fonts/mono-2.ttf",
+      "sha256": "1d01a089758988e46804e5f318216e93bf54c84231e174051eb7318b4e17ef6e"
+    },
+    {
+      "path": "website/public/assets/fonts/mono-3.ttf",
+      "sha256": "bfd5ffa560b86e141c00971c762ef0a641df8018474504da39c543a73c6c0869"
+    },
+    {
+      "path": "website/public/assets/fonts/noto-1.ttf",
+      "sha256": "9f48a34dff084ee8872b46516c1e809838a39fa1cbc3326fcb9d99c8b883c26b"
+    },
+    {
+      "path": "website/public/assets/fonts/noto-2.ttf",
+      "sha256": "6c7f23a1d285a6ea40fdbe182d478c019de61d7427fbc0ea32d9ca79c38d577c"
+    },
+    {
+      "path": "website/public/assets/fonts/noto-3.ttf",
+      "sha256": "2afcd4863584a982e9e5ec667a66960df105cbdc2e9069d15ab920b0c778e4db"
+    },
+    {
+      "path": "website/public/assets/fonts/noto-4.ttf",
+      "sha256": "295faf4363c3cdb719612269f7606195a0714cef2798b016c8189f1125855081"
+    },
+    {
+      "path": "website/public/assets/fonts/symbols-1.ttf",
+      "sha256": "e94189918136f423b7b17a8ea7aa1fded213aae1d468e227130b3d94542465b1"
+    },
+    {
+      "path": "website/public/assets/mobile-0605d.svg",
+      "sha256": "40915fc435325df2c38e67164b91aed2a795000da9c95663cc1df4fab510490b"
+    },
+    {
+      "path": "website/public/assets/mobile-1b10e.svg",
+      "sha256": "17e9684ea018110f48f0940bf9ce9c3967646dcbd899d512914ddebd0ceae5bf"
+    },
+    {
+      "path": "website/public/assets/mobile-25a51.png",
+      "sha256": "6b7eaa9324d89f6c9570a07da64df28d631998832201fbd432ee0678aa95a28e"
+    },
+    {
+      "path": "website/public/assets/mobile-6b953.svg",
+      "sha256": "f5103f677dccd0c881e2653d724f8ccb8a39899137b2e89dfde701ac5872493a"
+    },
+    {
+      "path": "website/public/assets/mobile-72a93.svg",
+      "sha256": "ab20db7f669649f8e61fee143e503f048b7f254f528604664c2d274f6818c1fd"
+    },
+    {
+      "path": "website/public/assets/mobile-7495a.png",
+      "sha256": "9000074c631d2d58aba768bcda5a189fd53a77551733a82e0434065c763f79c3"
+    },
+    {
+      "path": "website/public/assets/mobile-7a02f.png",
+      "sha256": "47ac9099b1ff5f28b8dfb7662b78bb502b2bda8b5c49ef406912b653d5d7be70"
+    },
+    {
+      "path": "website/public/assets/mobile-b3517.svg",
+      "sha256": "cb7fbebac1cb358bba050950112c30b3c27b9fb26784e351213bf613f30b2579"
+    },
+    {
+      "path": "website/public/assets/mobile-be313.svg",
+      "sha256": "3b77bfbfa759368ed00302169234db72449f35ea891beb5832c702f4e2d5bcb7"
+    },
+    {
+      "path": "website/public/assets/mobile-db2fb.svg",
+      "sha256": "f3806f6dadd2ccfbb86a793cf9b9182115ca3dcacbe1101fe2d08af0165fdeb2"
+    },
+    {
+      "path": "website/public/favicon.svg",
+      "sha256": "8c8170cb8d5b47003fc11bec9e1f37bb5b62515336c316c7530dc02fdad7da37"
+    },
+    {
+      "path": "website/public/index.html",
+      "sha256": "68225ee2624c0cb2f271e8e9e171000aec2af8b549d1041f57f44e9fed46af70"
+    },
+    {
+      "path": "website/public/styles.css",
+      "sha256": "1032f50002518078dd0be7a986d44d93ce03aaf904cfb089ff6b13987e238fb6"
+    },
+    {
+      "path": "website/public/validation.mjs",
+      "sha256": "f16b3089d4ce9067f9279af424c4a13d6ad2ce0bfd0428c89de25ba0f81437f0"
+    },
+    {
+      "path": "website/server.mjs",
+      "sha256": "c5346a42c7221a6f5395739b8aa70b3a86021293af8d4dbdf845af498105511f"
+    },
+    {
+      "path": "website/start-preview.cmd",
+      "sha256": "ec1c982260f67981ba4ea26090ca9a29793d8320bf52ea71e9b03d71d2575b87"
+    },
+    {
+      "path": "website/tests/browser-check.js",
+      "sha256": "614e957b592e674d5508d174b3fda7f7d6aa86df6128f8248ba5312fb170befb"
+    },
+    {
+      "path": "website/tests/production.test.mjs",
+      "sha256": "5f1c7035b6cd894bb5e208c19856d8db1dbd29e81bd6039601e7d5d0fb77a504"
+    },
+    {
+      "path": "website/tests/run-browser-tests.ps1",
+      "sha256": "42db3f288b954fe97ff62c131bfd7ec756a7b198ee950cc3775714f79532d2f3"
+    },
+    {
+      "path": "website/tests/website.test.mjs",
+      "sha256": "e2e4938ae6b03bb00ca9ad20789ae6a37a8f703de1369d166e946566b45b4427"
+    }
+  ]
+}

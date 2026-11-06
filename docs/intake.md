@@ -1,0 +1,41 @@
+# Project Intake
+
+把原始需求交給 AI 即可開始。AI 先查 repo、既有設定、文件與本次對話，再整理下表；使用者不需要先填完整份表格。
+
+| 欄位 | 取得方式 | 何時真的阻塞 |
+|---|---|---|
+| 問題、使用者、期望結果 | 對話／issue／產品資料 | 沒有可驗收目標，或解釋會導致不同產品結果 |
+| 範圍與限制 | 對話、既有系統 | 會突破明確邊界或無法判斷允許行為 |
+| 技術棧與程式位置 | 掃描 repo 設定與依賴 | 無法存取必要程式或有影響結果的選型限制 |
+| 測試與執行命令 | 專案設定、CI、現有測試 | 沒有可行驗證方法，需先建立或解決環境 |
+| 資料、API、權限規則 | 程式、schema、契約、指定來源 | 重要語意仍不明，會造成錯誤資料或權限 |
+| 設計與非關鍵偏好 | 既有規範與元件 | 只有影響驗收的歧義才阻塞；其餘沿用慣例 |
+| 外部操作與授權 | 本次指示與專案限制 | 確切目標或操作授權不足時 |
+| Roadmap／商業模式 | 已有資料，沒有可後補 | 與當前驗收無關就不阻塞 |
+
+## AI 啟動步驟
+
+1. 整理已知資訊、來源、待查事項與少數真正需人回答的問題。
+2. 依需要建立 product、architecture、modules、api、database、uiux 等專案文件；本模板不假裝已有產品實作。
+3. 寫 feature spec 的執行約定與 AC，依風險路由。
+4. Design Ready 後完成適用設計；Implementation Ready 後啟動 Node 內迴圈。
+5. 初始化 state.json（mode=active）並記錄問題／決策；缺資料依 clarification-policy 處理。
+
+TBD 僅表示尚未完成。重要未定事項不能靠填 TBD 通過 Ready；不相關的資料缺口不必阻塞。
+
+## 政府標案資安輸入
+
+先查現有專案與對話紀錄。未知時先確認是否台灣政府標案（含委外、維運、分包）：是／否／尚不確定。是則確認系統防護需求高／中／普／未知及依據，與政策範圍 extended／mandatory_only／assess；政策選擇不能免除法令或契約要求。機關責任等級 A～E 另記，不互相替代。
+
+政府為是即呼叫 [security-planner](../.agents/skills/security-planner/SKILL.md)，按需取得 RFP、契約、原始查核表、系統邊界、核心系統／客製化／委託金額及檢測責任。可由文件確認者自行查證，只對影響結果的缺口詢問。未知不推定為普；允許先盤點，不讓受影響的設計與實作定案。
+
+新 active 任務將 government_project 與 plan 相對路徑記在 feature.security，個案資料不回寫全域 AGENTS.md。
+
+## 本專案已知資料（2026-11-06 更新）
+
+- 使用情境 Web 開發；工作流 MingMing v1.1.3，已再次核對最新 release。
+- 使用者已授權網站實作；品牌 NotFound404、Figma V2、表單只作本機需求預覽、非政府標案。
+- 前端採 HTML/CSS/JavaScript，Node.js v24.20.0 標準庫提供本機伺服器，無框架套件依賴。
+- 不傳送／持久化個資，無後端 API。案例明示概念示範；聯絡方式待正式確認。
+- 來源與設計見 figma-handoff.md、website-design.md；網站操作見 website/README.md。
+- 未授權 commit、push 或部署。唯一狀態在 tasks/current/state.json。

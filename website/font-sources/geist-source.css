@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=gyBhhwUxId8gMGYQMKR3pzfaWI_RnOM4nYuA43Q3lpyvtKblDTWz55Th-JVY-3xupKpvBA2F5zk79md5Znc1CMxhLoonzNIEy9hDi6lmflY6u7bsFk-uMZUzQdI3zeq3YKHIS0YpXv7NsniH8t1hCYZ2tlDiFWnKBAs&skey=70a816dcd17c8a3c&v=v5) format('truetype');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=gyBhhwUxId8gMGYQMKR3pzfaWI_RruM4nYuA43Q3lpyvtKblDTWz55Th-JVY-3xupKpvBA2F5zk79md5Znc1CMxhLoonzNIEy9hDi6lmflY6u7bsFk-uMZUzQdI3zeq3YKHIS0YpXv7NsniH8t1hCYZ2tlDiFWnKBAs&skey=70a816dcd17c8a3c&v=v5) format('truetype');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=gyBhhwUxId8gMGYQMKR3pzfaWI_Re-Q4nYuA43Q3lpyvtKblDTWz55Th-JVY-3xupKpvBA2F5zk79md5Znc1CMxhLoonzNIEy9hDi6lmflY6u7bsFk-uMZUzQdI3zeq3YKHIS0YpXv7NsniH8t1hCYZ2tlDiFWnKBAs&skey=70a816dcd17c8a3c&v=v5) format('truetype');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=gyBhhwUxId8gMGYQMKR3pzfaWI_RHOQ4nYuA43Q3lpyvtKblDTWz55Th-JVY-3xupKpvBA2F5zk79md5Znc1CMxhLoonzNIEy9hDi6lmflY6u7bsFk-uMZUzQdI3zeq3YKHIS0YpXv7NsniH8t1hCYZ2tlDiFWnKBAs&skey=70a816dcd17c8a3c&v=v5) format('truetype');
+}

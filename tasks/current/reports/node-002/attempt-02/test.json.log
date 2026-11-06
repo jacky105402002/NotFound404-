@@ -1,0 +1,20 @@
+["node","--test","website/tests/website.test.mjs","website/tests/production.test.mjs"]
+Listening on 127.0.0.1:52675
+✔ Railway 預設接受外部路由與平台 PORT (1.0356ms)
+✔ production entry 實際監聽指定埠，首頁、素材可讀且工作流不可讀 (58.8763ms)
+✔ 必填與空白稱呼、Email 錯誤各自標示 (4.5786ms)
+✔ 合法摘要修剪空白、保留非 HTML 的原始文字與服務 (0.1364ms)
+✔ 邊界長度與選填內容 (0.4689ms)
+✔ Email 拒絕空白、多個 @ 與缺少網域 (0.1221ms)
+✔ 首頁與模組正確回傳、HEAD 無 body (12.1641ms)
+✔ 拒絕 POST、工作流檔案及路徑 traversal (3.3295ms)
+✔ 所有設計資產非空且有頁面對應，無暫時素材 URL (2.468ms)
+✔ 預覽文案無未核實數字、假地址及外部傳輸程式 (1.6615ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.7002

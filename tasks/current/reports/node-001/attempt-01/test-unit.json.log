@@ -1,0 +1,17 @@
+["node","--test","website/tests/website.test.mjs"]
+✔ 必填與空白稱呼、Email 錯誤各自標示 (4.7264ms)
+✔ 合法摘要修剪空白、保留非 HTML 的原始文字與服務 (0.1275ms)
+✔ 邊界長度與選填內容 (0.4563ms)
+✔ Email 拒絕空白、多個 @ 與缺少網域 (0.1132ms)
+✔ 首頁與模組正確回傳、HEAD 無 body (14.0606ms)
+✔ 拒絕 POST、工作流檔案及路徑 traversal (2.9023ms)
+✔ 所有設計資產非空且有頁面對應，無暫時素材 URL (2.2778ms)
+✔ 預覽文案無未核實數字、假地址及外部傳輸程式 (1.5022ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 111.3267

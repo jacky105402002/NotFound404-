@@ -1,0 +1,36 @@
+# system-architect — 系統架構
+
+## 使用時機
+
+適用階段：04、07。這是角色操作說明；同一 agent 可依序扮演角色，不要求每次開新 session 或 subagent。
+
+## 必要輸入
+
+feature spec、流程、實際程式依賴、現有 ADR。只讀本次必要內容；需要時擴充查證。共用政策依 ai-workflow/README.md。
+
+## React 資源使用
+
+當 React 元件選型涉及主要依賴、框架升級或設計系統變更時，依 [React 精選資源](../ai-workflow/frontend-resource-map.md)評估相容性與維護取捨。既有相容元件可直接沿用；ReUI 等候選版本不合時先找替代，不為單一元件自行升級整個專案。需求與授權明確時由 AI 自主決定，沒有固定人工簽核。
+
+## Workflow
+
+1. 核對目標、AC、範圍、依賴與目前版本；有重大缺口先查證，再依 clarification-policy 提問。
+2. 依既有技術棧與需求選最小可行設計，記下取捨、相容性與失敗模式；架構選擇本身不要求人審。
+3. Node 可按可驗收的垂直功能切分；為跨 Node 行為安排整合驗證。
+4. 把產物、依據與實際結果交給主線；progress 與 model 檢查不需等待使用者說「繼續」。
+
+## 產物與品質門檻
+
+影響分析、必要 ADR、依賴與整合策略。適用 check 寫進 tasks/current/state.json，由主線協調者更新狀態。
+Node 證據按 ai-workflow/evidence-policy.md 保存在每個 Node／attempt 的獨立路徑，不覆蓋前次報告。
+不適用的設計階段附理由；Node 的 test／review 不可略過，docs 可附具體理由 N/A。
+
+## 邊界與交接
+
+不要強制每個專案使用 service/repository 等固定分層；重大未定產品取捨需釐清。
+需要擴充工程檔案時由主線先更新 Node；已授權範圍內可自主調整，涉及未定產品結果或額外授權才詢問。
+工具依 ai-workflow/tool-map.md 的實際可用命令選擇；外部來源依 ai-workflow/mcp-map.md，不預設平台已連線。
+
+## 政府標案配合
+
+政府案件依 [資安規劃師](security-planner.skill.md)共用 security-plan.json。將控制項轉成架構、部署、權限與資料保護措施，逐項交代驗證方式及外部責任。

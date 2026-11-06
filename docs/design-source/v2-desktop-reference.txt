@@ -1,0 +1,1095 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/cba648f9-b489-4f57-afe8-83c199eda38b";
+const imgDot = `${assetPathPrefix}/4dc8f.svg`;
+const imgGlowCyan = `${assetPathPrefix}/39e80.svg`;
+const imgGlowGreen = `${assetPathPrefix}/10a0f.svg`;
+const imgDot1 = `${assetPathPrefix}/0605d.svg`;
+const imgDot2 = `${assetPathPrefix}/be313.svg`;
+const imgDot3 = `${assetPathPrefix}/b3517.svg`;
+const imgDot4 = `${assetPathPrefix}/72a93.svg`;
+const imgDot5 = `${assetPathPrefix}/1b10e.svg`;
+const imgDot6 = `${assetPathPrefix}/db2fb.svg`;
+
+type ButtonPrimaryProps = {
+  className?: string;
+  icon?: string;
+  label?: string;
+  showIcon?: boolean;
+};
+
+function ButtonPrimary({ className, icon = "rocket_launch", label = "與我們聯繫 / Start a Project", showIcon = true }: ButtonPrimaryProps) {
+  return (
+    <div className={className || "[word-break:break-word] bg-[var(--brand\\/cyan,#00f0ff)] content-stretch flex gap-[var(--space\\/xs,4px)] items-center overflow-clip px-[var(--space\\/lg,24px)] py-[var(--space\\/sm,8px)] relative rounded-[var(--radius\\/sm,4px)] shadow-[0px_0px_20px_-2px_rgba(0,240,255,0.25)] text-[color:var(--brand\\/on-cyan,#006970)] whitespace-nowrap"} data-node-id="4:19" data-name="Button/Primary">
+      {showIcon && (
+        <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[18px] relative shrink-0 text-[18px]" data-node-id="4:17" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+          {icon}
+        </p>
+      )}
+      <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] tracking-[0.7px] uppercase" data-node-id="4:18">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type InputProps = {
+  className?: string;
+  label?: string;
+  placeholder?: string;
+  type?: "Text" | "Textarea";
+};
+
+function Input({ className, label = "您的稱呼 / Client Name *", placeholder = "例如：Alex Chen (CTO / 創辦人)", type = "Text" }: InputProps) {
+  const isTextarea = type === "Textarea";
+  return (
+    <div className={className || "content-stretch flex flex-col gap-[4px] items-start overflow-clip relative w-[320px]"} id={isTextarea ? "node-4_69" : "node-4_64"}>
+      <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/on-surface-variant,#b9cacb)] tracking-[0.8px] uppercase whitespace-nowrap" data-node-id="4:61">
+        {label}
+      </p>
+      <div className={`${String.raw`bg-[var(--surface\/lowest,#0b0e15)] border border-[rgba(255,255,255,0.08)] border-solid content-stretch flex items-start overflow-clip relative rounded-[var(--radius\/sm,4px)] shrink-0 w-full `}${isTextarea ? String.raw`h-[104px] p-[var(--space\/md,16px)]` : String.raw`px-[var(--space\/md,16px)] py-[var(--space\/sm,8px)]`}`} id={isTextarea ? "node-4_67" : "node-4_62"} data-name="Field">
+        {type === "Text" && (
+          <p className="[word-break:break-word] font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] relative shrink-0 text-[13px] text-[color:var(--text\/outline,#849495)] whitespace-nowrap" data-node-id="4:63">
+            {placeholder}
+          </p>
+        )}
+        {isTextarea && (
+          <p className="[word-break:break-word] flex-[1_0_0] font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] min-w-px relative text-[13px] text-[color:var(--text\/outline,#849495)]" data-node-id="4:68">
+            {placeholder}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+type CheckboxOptionProps = {
+  className?: string;
+  checked?: boolean;
+  label?: string;
+};
+
+function CheckboxOption({ className, checked = true, label = "官方網站架設 (Web Architecture)" }: CheckboxOptionProps) {
+  const isNotChecked = !checked;
+  return (
+    <div className={className || "bg-[var(--surface\\/lowest,#0b0e15)] content-stretch flex gap-[var(--space\\/xs,4px)] items-center overflow-clip p-[var(--space\\/sm,8px)] relative rounded-[var(--radius\\/sm,4px)]"} id={isNotChecked ? "node-4_58" : "node-4_54"}>
+      <div className={`relative rounded-[2px] shrink-0 size-[16px] ${isNotChecked ? String.raw`border border-[var(--brand\/cyan,#00f0ff)] border-solid` : String.raw`bg-[var(--brand\/cyan,#00f0ff)] content-stretch flex items-center justify-center overflow-clip`}`} id={isNotChecked ? "node-4_56" : "node-4_51"} data-name="Box">
+        {checked && (
+          <p className="[word-break:break-word] font-['Material_Symbols_Sharp:Regular'] font-normal leading-[14px] relative shrink-0 text-[14px] text-[color:var(--surface\/lowest,#0b0e15)] whitespace-nowrap" data-node-id="4:52" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+            check
+          </p>
+        )}
+      </div>
+      <p className="[word-break:break-word] font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] relative shrink-0 text-[13px] text-[color:var(--text\/on-surface,#e1e2ec)] whitespace-nowrap" data-node-id="4:53">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type ChannelCardProps = {
+  className?: string;
+  badge?: string;
+  icon?: string;
+  label?: string;
+  showBadge?: boolean;
+  value?: string;
+};
+
+function ChannelCard({ className, badge = "PGP ENCRYPTED", icon = "alternate_email", label = "OFFICIAL EMAIL", showBadge = true, value = "contact@nofound404.dev" }: ChannelCardProps) {
+  return (
+    <div className={className || "[word-break:break-word] bg-[var(--surface\\/container,#1d1f27)] content-stretch flex gap-[var(--space\\/sm,8px)] items-center justify-between overflow-clip p-[var(--space\\/md,16px)] relative rounded-[var(--radius\\/sm,4px)] w-[400px] whitespace-nowrap"} data-node-id="5:159" data-name="Channel Card">
+      <div className="content-stretch flex gap-[var(--space\/sm,8px)] items-center overflow-clip relative shrink-0" data-node-id="5:153" data-name="Left">
+        <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[20px] relative shrink-0 text-[20px] text-[color:var(--brand\/cyan,#00f0ff)]" data-node-id="5:154" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+          {icon}
+        </p>
+        <div className="content-stretch flex flex-col gap-[2px] items-start overflow-clip relative shrink-0" data-node-id="5:155" data-name="Text">
+          <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] uppercase" data-node-id="5:156">
+            {label}
+          </p>
+          <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[16px] relative shrink-0 text-[12px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[0.72px]" data-node-id="5:157">
+            {value}
+          </p>
+        </div>
+      </div>
+      {showBadge && (
+        <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.8px]" data-node-id="5:158">
+          {badge}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type TagProps = {
+  className?: string;
+  color?: "cyan" | "green" | "ice" | "violet";
+  label?: string;
+};
+
+function Tag({ className, color = "cyan", label = "Next.js" }: TagProps) {
+  const isGreen = color === "green";
+  const isIce = color === "ice";
+  const isViolet = color === "violet";
+  return (
+    <div className={className || "bg-[var(--surface\\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\\/xs,4px)] py-[2px] relative rounded-[var(--radius\\/sm,4px)]"} id={isViolet ? "node-4_14" : isIce ? "node-4_11" : isGreen ? "node-4_8" : "node-4_5"}>
+      {color === "cyan" && (
+        <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/primary,#dbfcff)] tracking-[0.8px] whitespace-nowrap" data-node-id="4:4">
+          {label}
+        </p>
+      )}
+      {isGreen && (
+        <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.8px] whitespace-nowrap" data-node-id="4:7">
+          {label}
+        </p>
+      )}
+      {isIce && (
+        <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/cyan-dim,#00dbe9)] tracking-[0.8px] whitespace-nowrap" data-node-id="4:10">
+          {label}
+        </p>
+      )}
+      {isViolet && (
+        <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/violet-light,#f2daff)] tracking-[0.8px] whitespace-nowrap" data-node-id="4:13">
+          {label}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type ServiceCardProps = {
+  className?: string;
+  accent?: "cyan";
+  description?: string;
+  icon?: string;
+  number?: string;
+  subtitle?: string;
+  title?: string;
+};
+
+function ServiceCard({ className, accent = "cyan", description = "基於 Next.js 與 React 打造極致載入速度與高可用性架構。提供完美跨裝置響應式設計（RWD）、無障礙支援與極致現代視覺微互動，打造兼具藝術美感與高效能轉換的旗艦級數位門面。", icon = "desktop_mac", number = "CAPABILITY 01", subtitle = "Web Architecture & Custom Sites", title = "官方網站架設" }: ServiceCardProps) {
+  return (
+    <div className={className || "bg-[var(--surface\\/container,#1d1f27)] border border-[rgba(255,255,255,0.06)] border-solid content-stretch flex flex-col gap-[var(--space\\/md,16px)] h-[372px] items-start overflow-clip p-[var(--space\\/lg,24px)] relative rounded-[var(--radius\\/lg,8px)] w-[262px]"} data-node-id="5:20">
+      <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] items-start min-h-px overflow-clip relative w-full" data-node-id="5:3" data-name="Content">
+        <div className="bg-[var(--surface\/high,#272a32)] content-stretch flex items-center justify-center overflow-clip relative rounded-[var(--radius\/lg,8px)] shrink-0 size-[48px]" data-node-id="5:4" data-name="Icon Box">
+          <p className="[word-break:break-word] font-['Material_Symbols_Sharp:Regular'] font-normal leading-[28px] relative shrink-0 text-[28px] text-[color:var(--brand\/cyan,#00f0ff)] whitespace-nowrap" data-node-id="5:5" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+            {icon}
+          </p>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 w-full" data-node-id="5:6" data-name="Meta">
+          <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] uppercase whitespace-nowrap" data-node-id="5:7">
+            {number}
+          </p>
+          <p className="font-['Noto_Sans_TC:Bold'] font-bold leading-[28px] min-w-full relative shrink-0 text-[20px] text-[color:var(--text\/on-surface,#e1e2ec)] w-[min-content]" data-node-id="5:8">
+            {title}
+          </p>
+          <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] min-w-full relative shrink-0 text-[10px] text-[color:var(--text\/on-surface-variant,#b9cacb)] tracking-[0.8px] w-[min-content]" data-node-id="5:9">
+            {subtitle}
+          </p>
+        </div>
+        <p className="[word-break:break-word] font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] min-w-full relative shrink-0 text-[13px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-[min-content]" data-node-id="5:10">
+          {description}
+        </p>
+      </div>
+      <div className="content-start flex flex-wrap gap-[6px] items-start overflow-clip relative shrink-0 w-full" data-node-id="5:11" data-name="Tags">
+        <Tag className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" />
+        <Tag className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" label="Tailwind CSS" />
+        <Tag className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" label="SSR" />
+        <Tag className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" label="Micro-interactions" />
+      </div>
+    </div>
+  );
+}
+
+type ButtonSecondaryProps = {
+  className?: string;
+  label?: string;
+};
+
+function ButtonSecondary({ className, label = "探索核心服務 / Explore Services" }: ButtonSecondaryProps) {
+  return (
+    <div className={className || "[word-break:break-word] bg-[var(--surface\\/high,#272a32)] content-stretch flex gap-[var(--space\\/xs,4px)] items-center leading-[20px] overflow-clip px-[var(--space\\/md,16px)] py-[var(--space\\/sm,8px)] relative rounded-[var(--radius\\/sm,4px)] text-[14px] tracking-[0.7px] whitespace-nowrap"} data-node-id="4:23" data-name="Button/Secondary">
+      <p className="font-['JetBrains_Mono:Bold'] font-bold relative shrink-0 text-[color:var(--brand\/cyan,#00f0ff)]" data-node-id="4:21">{`>_`}</p>
+      <p className="font-['JetBrains_Mono:Regular'] font-normal relative shrink-0 text-[color:var(--brand\/green-light,#4dffb1)] uppercase" data-node-id="4:22">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+type ButtonHeaderCtaProps = {
+  className?: string;
+  label?: string;
+  showSub?: boolean;
+  sub?: string;
+};
+
+function ButtonHeaderCta({ className, label = "與我們聯繫", showSub = true, sub = "/ CONTACT" }: ButtonHeaderCtaProps) {
+  return (
+    <div className={className || "[word-break:break-word] bg-[var(--brand\\/cyan,#00f0ff)] content-stretch flex gap-[var(--space\\/xs,4px)] items-center overflow-clip px-[var(--space\\/md,16px)] py-[var(--space\\/sm,8px)] relative rounded-[var(--radius\\/sm,4px)] shadow-[0px_0px_20px_-2px_rgba(0,240,255,0.25)] text-[color:var(--brand\\/on-cyan,#006970)] whitespace-nowrap"} data-node-id="4:27" data-name="Button/Header CTA">
+      <p className="font-['Noto_Sans_TC:Bold'] font-bold leading-[16px] relative shrink-0 text-[12px] tracking-[0.72px]" data-node-id="4:25">
+        {label}
+      </p>
+      {showSub && (
+        <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[11px] tracking-[0.88px]" data-node-id="4:26">
+          {sub}
+        </p>
+      )}
+    </div>
+  );
+}
+
+type NavItemProps = {
+  className?: string;
+  label?: string;
+  state?: "Default" | "Active";
+  sub?: string;
+};
+
+function NavItem({ className, label = "服務項目", state = "Default", sub = "SERVICES" }: NavItemProps) {
+  const isActive = state === "Active";
+  const isDefault = state === "Default";
+  return (
+    <div className={className || `content-stretch flex flex-col items-center overflow-clip py-[4px] relative ${isActive ? String.raw`text-[color:var(--brand\/primary,#dbfcff)]` : "font-medium"}`} id={isActive ? "node-4_35" : "node-4_31"}>
+      {isDefault && (
+        <>
+          <p className="font-['Noto_Sans_TC:Medium'] leading-[24px] relative shrink-0 text-[14px] text-[color:var(--text\/on-surface-variant,#b9cacb)]" data-node-id="4:29">
+            {label}
+          </p>
+          <p className="font-['JetBrains_Mono:Medium'] leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] uppercase" data-node-id="4:30">
+            {sub}
+          </p>
+        </>
+      )}
+      {isActive && (
+        <>
+          <p className="font-['Noto_Sans_TC:Bold'] font-bold leading-[24px] relative shrink-0 text-[14px]" data-node-id="4:33">
+            {label}
+          </p>
+          <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] tracking-[0.8px] uppercase" data-node-id="4:34">
+            {sub}
+          </p>
+        </>
+      )}
+    </div>
+  );
+}
+
+export default function V2Desktop() {
+  return (
+    <div className="bg-[var(--surface\/background,#10131a)] content-stretch flex flex-col items-start relative size-full" data-node-id="117:414" data-name="V2 — Desktop · 專案諮詢導向">
+      <div className="backdrop-blur-[12px] bg-[var(--surface\/lowest,#0b0e15)] border-[rgba(255,255,255,0.05)] border-b border-solid content-stretch flex gap-[var(--space\/md,16px)] h-[80px] items-center justify-between overflow-clip px-[var(--margin\/desktop,80px)] relative shrink-0 w-full" data-node-id="117:415" data-name="Header">
+        <div className="content-stretch flex gap-[var(--space\/md,16px)] items-center overflow-clip relative shrink-0" data-node-id="117:416" data-name="Brand">
+          <div className="bg-[var(--brand\/cyan,#00f0ff)] border border-[var(--brand\/cyan,#00f0ff)] border-solid content-stretch flex items-center justify-center overflow-clip relative rounded-[var(--radius\/lg,8px)] shrink-0 size-[32px]" data-node-id="117:417" data-name="Logo（換成品牌 Logo）">
+            <p className="[word-break:break-word] font-['JetBrains_Mono:Bold'] font-bold leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/cyan,#00f0ff)] tracking-[0.8px] whitespace-nowrap" data-node-id="117:418">
+              404
+            </p>
+          </div>
+          <p className="[word-break:break-word] font-['Geist:Bold'] font-bold leading-[28px] relative shrink-0 text-[20px] text-[color:var(--brand\/primary,#dbfcff)] whitespace-nowrap" data-node-id="117:419">
+            NoFound404
+          </p>
+          <div className="bg-[var(--surface\/high,#272a32)] border border-[var(--border\/outline-variant,#3b494b)] border-solid content-stretch flex gap-[4px] items-center overflow-clip px-[8px] py-[2px] relative rounded-[4px] shrink-0" data-node-id="117:420" data-name="Status Badge">
+            <div className="relative shrink-0 size-[6px]" data-node-id="117:421" data-name="dot">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot} />
+            </div>
+            <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-dim,#00e296)] tracking-[0.8px] whitespace-nowrap" data-node-id="117:422">
+              ONLINE
+            </p>
+          </div>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex gap-[var(--space\/lg,24px)] items-center overflow-clip relative shrink-0 whitespace-nowrap" data-node-id="117:423" data-name="Nav">
+          <NavItem className="content-stretch flex flex-col items-center overflow-clip py-[4px] relative shrink-0 text-[color:var(--brand\/primary,#dbfcff)]" label="首頁" state="Active" sub="HOME" />
+          <NavItem className="content-stretch flex flex-col font-medium items-center overflow-clip py-[4px] relative shrink-0" />
+          <NavItem className="content-stretch flex flex-col font-medium items-center overflow-clip py-[4px] relative shrink-0" label="作品案例" sub="SHOWCASE" />
+          <NavItem className="content-stretch flex flex-col font-medium items-center overflow-clip py-[4px] relative shrink-0" label="專案諮詢" sub="CONSULTATION" />
+        </div>
+        <div className="content-stretch flex gap-[var(--space\/md,16px)] items-center overflow-clip relative shrink-0" data-node-id="117:429" data-name="Actions">
+          <div className="[word-break:break-word] bg-[var(--surface\/low,#191b23)] border border-[var(--border\/outline-variant,#3b494b)] border-solid content-stretch flex gap-[4px] items-center leading-[14px] overflow-clip px-[8px] py-[4px] relative rounded-[4px] shrink-0 text-[10px] tracking-[0.8px] whitespace-nowrap" data-node-id="117:430" data-name="Latency">
+            <p className="font-['JetBrains_Mono:Bold'] font-bold relative shrink-0 text-[color:var(--brand\/cyan,#00f0ff)]" data-node-id="117:431">{`>_`}</p>
+            <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[color:var(--text\/outline,#849495)]" data-node-id="117:432">
+              LATENCY: 14ms
+            </p>
+          </div>
+          <ButtonHeaderCta className="[word-break:break-word] bg-[var(--brand\/cyan,#00f0ff)] content-stretch flex gap-[var(--space\/xs,4px)] items-center overflow-clip px-[var(--space\/md,16px)] py-[var(--space\/sm,8px)] relative rounded-[var(--radius\/sm,4px)] shadow-[0px_0px_20px_-2px_rgba(0,240,255,0.25)] shrink-0 text-[color:var(--brand\/on-cyan,#006970)] whitespace-nowrap" label="專案諮詢" sub="/ CONSULTATION" />
+          <div className="bg-[var(--surface\/high,#272a32)] border border-[var(--border\/outline-variant,#3b494b)] border-solid content-stretch flex items-center justify-center overflow-clip relative rounded-[16px] shrink-0 size-[32px]" data-node-id="117:434" data-name="Account">
+            <p className="[word-break:break-word] font-['Material_Symbols_Sharp:Regular'] font-normal leading-[18px] relative shrink-0 text-[18px] text-[color:var(--brand\/primary,#dbfcff)] whitespace-nowrap" data-node-id="117:435" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+              person
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex flex-col gap-[var(--space\/lg,24px)] items-start overflow-clip px-[var(--margin\/desktop,80px)] py-[var(--space\/2xl,64px)] relative shrink-0 w-full" data-node-id="117:436" data-name="Hero">
+        <div className="absolute left-[320px] size-[384px] top-[-128px]" data-node-id="117:437" data-name="Glow / Cyan">
+          <div className="absolute inset-[-36.46%]">
+            <img alt="" className="block max-w-none size-full" src={imgGlowCyan} />
+          </div>
+        </div>
+        <div className="absolute left-[910px] size-[450px] top-[280px]" data-node-id="117:438" data-name="Glow / Green">
+          <div className="absolute inset-[-35.56%]">
+            <img alt="" className="block max-w-none size-full" src={imgGlowGreen} />
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[var(--space\/xl,40px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:439" data-name="Hero Grid">
+          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] items-start min-w-px overflow-clip relative" data-node-id="117:440" data-name="Copy">
+            <div className="bg-[var(--surface\/low,#191b23)] content-stretch flex gap-[var(--space\/xs,4px)] items-center overflow-clip px-[var(--space\/sm,8px)] py-[4px] relative rounded-[4px] shrink-0" data-node-id="117:441" data-name="Terminal Badge">
+              <div className="relative shrink-0 size-[8px]" data-node-id="117:442" data-name="dot">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot1} />
+              </div>
+              <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.8px] whitespace-nowrap" data-node-id="117:443">{`TERMINAL // ERROR 404: REDEFINING POSSIBILITIES`}</p>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--space\/xs,4px)] items-start overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="117:444" data-name="Title Group">
+              <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[16px] relative shrink-0 text-[12px] text-[color:var(--brand\/cyan-light,#7df4ff)] tracking-[0.72px] uppercase" data-node-id="117:445">{`> SYSTEM_INITIALIZE [NF404_CORE]`}</p>
+              <p className="font-['Geist:ExtraBold'] font-extrabold leading-[0] relative shrink-0 text-[0px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[-2.56px]" data-node-id="117:446">
+                <span className="leading-[72px] text-[64px]">{`NoFound404 `}</span>
+                <span className="font-['Noto_Sans_TC:Black'] font-black leading-[72px] text-[#00f0ff] text-[64px]">工作室</span>
+              </p>
+              <p className="bg-clip-text bg-gradient-to-r font-['Noto_Sans_TC:Bold'] font-bold from-[#00f0ff] leading-[44px] relative shrink-0 text-[36px] text-[transparent] to-[#00ffab] tracking-[-1.08px] via-1/2 via-[#7df5ff]" data-node-id="117:447">
+                找不到限制，唯有極致解法
+              </p>
+              <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[20px] relative shrink-0 text-[14px] text-[color:var(--text\/on-surface-variant,#b9cacb)] tracking-[0.7px]" data-node-id="117:448">{`[ 404 Limit Not Found // Zero Bottleneck Paradigm ]`}</p>
+            </div>
+            <p className="[word-break:break-word] font-['Noto_Sans_TC:Regular'] font-normal leading-[0] min-w-full relative shrink-0 text-[0px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-[min-content]" data-node-id="117:449">
+              <span className="leading-[30px] text-[18px]">我們專注於</span>
+              <span className="font-['Noto_Sans_TC:Bold'] font-bold leading-[30px] text-[#dbfcff] text-[18px]">數位轉型、現代網頁架構開發</span>
+              <span className="leading-[30px] text-[18px]">與</span>
+              <span className="font-['Noto_Sans_TC:Bold'] font-bold leading-[30px] text-[#4dffb1] text-[18px]">前沿 AI 智慧工作流解決方案</span>
+              <span className="leading-[30px] text-[18px]">。以頂級工程思維與自動化智體，協助新創團隊與大型企業突破傳統效能邊界，以十倍速重構數位核心體驗。</span>
+            </p>
+            <div className="[word-break:break-word] content-stretch flex gap-[var(--space\/md,16px)] items-center overflow-clip pt-[8px] relative shrink-0 whitespace-nowrap" data-node-id="117:450" data-name="CTAs">
+              <ButtonPrimary className="bg-[var(--brand\/cyan,#00f0ff)] content-stretch flex gap-[var(--space\/xs,4px)] items-center overflow-clip px-[var(--space\/lg,24px)] py-[var(--space\/sm,8px)] relative rounded-[var(--radius\/sm,4px)] shadow-[0px_0px_20px_-2px_rgba(0,240,255,0.25)] shrink-0 text-[color:var(--brand\/on-cyan,#006970)]" label="專案諮詢 / Start a Project" />
+              <ButtonSecondary className="bg-[var(--surface\/high,#272a32)] content-stretch flex gap-[var(--space\/xs,4px)] items-center leading-[20px] overflow-clip px-[var(--space\/md,16px)] py-[var(--space\/sm,8px)] relative rounded-[var(--radius\/sm,4px)] shrink-0 text-[14px] tracking-[0.7px]" label="瀏覽服務項目 / Explore Services" />
+            </div>
+            <div className="[word-break:break-word] bg-[var(--surface\/low,#191b23)] content-stretch flex gap-[var(--space\/sm,8px)] items-start overflow-clip p-[var(--space\/sm,8px)] relative rounded-[4px] shrink-0 w-full whitespace-nowrap" data-node-id="117:453" data-name="Telemetry Bar">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="117:454" data-name="Stat">
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="I117:454;4:47">
+                  FRAMEWORK
+                </p>
+                <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[16px] relative shrink-0 text-[12px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[0.72px]" data-node-id="I117:454;4:48">
+                  NEXT.JS 15 + RWD
+                </p>
+              </div>
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="117:455" data-name="Stat">
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="I117:455;4:47">
+                  CORE VITALS
+                </p>
+                <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[16px] relative shrink-0 text-[12px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.72px]" data-node-id="I117:455;4:48">
+                  SCORE 100%
+                </p>
+              </div>
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[2px] items-start min-w-px overflow-clip relative" data-node-id="117:456" data-name="Stat">
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="I117:456;4:47">
+                  INTELLIGENCE
+                </p>
+                <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[16px] relative shrink-0 text-[12px] text-[color:var(--brand\/cyan,#00f0ff)] tracking-[0.72px]" data-node-id="I117:456;4:48">
+                  LLM AUTO-AGENTS
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--surface\/low,#191b23)] border border-[var(--brand\/cyan,#00f0ff)] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[var(--radius\/lg,8px)] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.5)] shrink-0 w-[450px]" data-node-id="117:457" data-name="Terminal Panel">
+            <div className="bg-[var(--surface\/container,#1d1f27)] content-stretch flex h-[40px] items-center justify-between overflow-clip px-[var(--space\/md,16px)] relative shrink-0 w-full" data-node-id="117:458" data-name="Titlebar">
+              <div className="content-stretch flex gap-[var(--space\/xs,4px)] items-center overflow-clip relative shrink-0" data-node-id="117:459" data-name="Window">
+                <div className="relative shrink-0 size-[12px]" data-node-id="117:460" data-name="dot">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot2} />
+                </div>
+                <div className="relative shrink-0 size-[12px]" data-node-id="117:461" data-name="dot">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot3} />
+                </div>
+                <div className="relative shrink-0 size-[12px]" data-node-id="117:462" data-name="dot">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot4} />
+                </div>
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Bold'] font-bold leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/on-surface-variant,#b9cacb)] tracking-[0.8px] whitespace-nowrap" data-node-id="117:463">
+                  NF404_TELEMETRY.sh
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0" data-node-id="117:464" data-name="Sync">
+                <div className="relative shrink-0 size-[6px]" data-node-id="117:465" data-name="dot">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot5} />
+                </div>
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-dim,#00e296)] tracking-[0.8px] whitespace-nowrap" data-node-id="117:466">
+                  SYNC: OK
+                </p>
+              </div>
+            </div>
+            <div className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex gap-[var(--space\/sm,8px)] items-start overflow-clip p-[var(--space\/md,16px)] relative shrink-0 w-full" data-node-id="117:467" data-name="Metrics">
+              <div className="bg-[var(--surface\/container,#1d1f27)] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px overflow-clip p-[var(--space\/sm,8px)] relative rounded-[4px]" data-node-id="117:468" data-name="Metric">
+                <div className="[word-break:break-word] content-stretch flex items-center justify-between leading-[14px] overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="117:469" data-name="Head">
+                  <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="117:470">
+                    NODE PING LATENCY
+                  </p>
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[14px] text-[color:var(--brand\/green-dim,#00e296)]" data-node-id="117:471" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    speed
+                  </p>
+                </div>
+                <p className="[word-break:break-word] font-['Geist:Bold'] font-bold leading-[28px] relative shrink-0 text-[20px] text-[color:var(--brand\/green-light,#4dffb1)] whitespace-nowrap" data-node-id="117:472">{`< 12ms`}</p>
+                <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex h-[4px] items-start overflow-clip relative rounded-[2px] shrink-0 w-full" data-node-id="117:473" data-name="Progress">
+                  <div className="bg-[var(--brand\/green-light,#4dffb1)] h-full relative shrink-0 w-[177px]" data-node-id="117:474" data-name="Value" />
+                </div>
+              </div>
+              <div className="bg-[var(--surface\/container,#1d1f27)] content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px overflow-clip p-[var(--space\/sm,8px)] relative rounded-[4px]" data-node-id="117:475" data-name="Metric">
+                <div className="[word-break:break-word] content-stretch flex items-center justify-between leading-[14px] overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="117:476" data-name="Head">
+                  <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="117:477">
+                    AI CLUSTER UPTIME
+                  </p>
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[14px] text-[color:var(--brand\/cyan,#00f0ff)]" data-node-id="117:478" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    smart_toy
+                  </p>
+                </div>
+                <p className="[word-break:break-word] font-['Geist:Bold'] font-bold leading-[28px] relative shrink-0 text-[20px] text-[color:var(--brand\/primary,#dbfcff)] whitespace-nowrap" data-node-id="117:479">
+                  99.99%
+                </p>
+                <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex h-[4px] items-start overflow-clip relative rounded-[2px] shrink-0 w-full" data-node-id="117:480" data-name="Progress">
+                  <div className="bg-[var(--brand\/cyan,#00f0ff)] h-full relative shrink-0 w-[186px]" data-node-id="117:481" data-name="Value" />
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex flex-col gap-[6px] items-start leading-[0] overflow-clip p-[var(--space\/md,16px)] relative shrink-0 tracking-[0.8px] w-full" data-node-id="117:482" data-name="Logs">
+              <p className="font-['JetBrains_Mono:Medium'] font-medium min-w-full relative shrink-0 text-[0px] text-[color:var(--text\/outline,#849495)] w-[min-content]" data-node-id="117:483">
+                <span className="leading-[14px] text-[10px]">{`[04:04:18 UTC] `}</span>
+                <span className="font-['JetBrains_Mono:Bold'] font-bold leading-[14px] text-[#00f0ff] text-[10px]">INITIALIZING</span>
+                <span className="leading-[14px] text-[10px]">{` Bespoke Digital Engine`}</span>
+              </p>
+              <p className="font-['JetBrains_Mono:Medium'] font-medium min-w-full relative shrink-0 text-[0px] text-[color:var(--text\/outline,#849495)] w-[min-content]" data-node-id="117:484">
+                <span className="leading-[14px] text-[10px]">{`[04:04:19 UTC] `}</span>
+                <span className="font-['JetBrains_Mono:Bold'] font-bold leading-[14px] text-[#4dffb1] text-[10px]">SUCCESS:</span>
+                <span className="leading-[14px] text-[10px]">{` Next.js SSR Hydration Completed (23ms)`}</span>
+              </p>
+              <p className="font-['JetBrains_Mono:Medium'] font-medium min-w-full relative shrink-0 text-[0px] text-[color:var(--text\/outline,#849495)] w-[min-content]" data-node-id="117:485">
+                <span className="leading-[14px] text-[10px]">{`[04:04:20 UTC] `}</span>
+                <span className="font-['JetBrains_Mono:Bold'] font-bold leading-[14px] text-[#00f0ff] text-[10px]">AI_AGENT:</span>
+                <span className="leading-[14px] text-[10px]">{` Active workflows routed via LangChain daemon`}</span>
+              </p>
+              <p className="font-['JetBrains_Mono:Medium'] font-medium min-w-full relative shrink-0 text-[0px] text-[color:var(--text\/outline,#849495)] w-[min-content]" data-node-id="117:486">
+                <span className="leading-[14px] text-[10px]">{`[04:04:21 UTC] `}</span>
+                <span className="font-['JetBrains_Mono:Bold'] font-bold leading-[14px] text-[#e0b6ff] text-[10px]">SEO_AUDIT:</span>
+                <span className="leading-[14px] text-[10px]">{` Structured schema parsed with 0 errors`}</span>
+              </p>
+              <p className="font-['JetBrains_Mono:Bold'] font-bold relative shrink-0 text-[10px] text-[color:var(--text\/on-surface,#e1e2ec)] whitespace-nowrap" data-node-id="117:487">
+                <span className="leading-[14px] text-[#0fa]">{`>`}</span>
+                <span className="leading-[14px]">{` DECK STATUS: READY FOR MISSION EXECUTION_`}</span>
+              </p>
+            </div>
+            <div className="bg-[var(--surface\/low,#191b23)] content-stretch flex items-center justify-between overflow-clip p-[var(--space\/md,16px)] relative shrink-0 w-full" data-node-id="117:488" data-name="Deployment Node">
+              <div className="content-stretch flex gap-[var(--space\/sm,8px)] items-center overflow-clip relative shrink-0" data-node-id="117:489" data-name="Info">
+                <div className="bg-[var(--brand\/cyan,#00f0ff)] content-stretch flex items-center justify-center overflow-clip relative rounded-[4px] shrink-0 size-[32px]" data-node-id="117:490" data-name="Icon">
+                  <p className="[word-break:break-word] font-['Material_Symbols_Sharp:Regular'] font-normal leading-[18px] relative shrink-0 text-[18px] text-[color:var(--brand\/cyan,#00f0ff)] whitespace-nowrap" data-node-id="117:491" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    verified
+                  </p>
+                </div>
+                <div className="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start leading-[14px] overflow-clip relative shrink-0 text-[10px] tracking-[0.8px] whitespace-nowrap" data-node-id="117:492" data-name="Text">
+                  <p className="font-['JetBrains_Mono:Bold'] font-bold relative shrink-0 text-[color:var(--text\/on-surface,#e1e2ec)]" data-node-id="117:493">
+                    DEPLOYMENT NODE 01
+                  </p>
+                  <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[color:var(--text\/outline,#849495)]" data-node-id="117:494">
+                    Region: APAC-Taipei-Edge
+                  </p>
+                </div>
+              </div>
+              <div className="bg-[var(--brand\/green,#0fa)] content-stretch flex items-start overflow-clip px-[4px] py-[2px] relative rounded-[4px] shrink-0" data-node-id="117:495" data-name="Active">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Bold'] font-bold leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.8px] whitespace-nowrap" data-node-id="117:496">
+                  ACTIVE
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[var(--surface\/low,#191b23)] content-stretch flex flex-col gap-[var(--space\/xl,40px)] items-start overflow-clip px-[var(--margin\/desktop,80px)] py-[var(--space\/2xl,64px)] relative shrink-0 w-full" data-node-id="117:497" data-name="Services">
+        <div className="[word-break:break-word] content-stretch flex gap-[var(--space\/md,16px)] items-end justify-between overflow-clip relative shrink-0 w-full" data-node-id="117:498" data-name="Section Header">
+          <div className="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 whitespace-nowrap" data-node-id="117:499" data-name="Title">
+            <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[16px] relative shrink-0 text-[12px] text-[color:var(--brand\/cyan,#00f0ff)] tracking-[0.72px] uppercase" data-node-id="117:500">{`// CORE CAPABILITIES`}</p>
+            <p className="font-['Noto_Sans_TC:Bold'] font-bold leading-[56px] relative shrink-0 text-[48px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[-1.44px]" data-node-id="117:501">
+              我們提供的核心服務
+            </p>
+          </div>
+          <p className="font-['Noto_Sans_TC:Regular'] font-normal leading-[24px] relative shrink-0 text-[15px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-[448px]" data-node-id="117:502">
+            打破一般外包思維，以頂尖工程底蘊、極致程式效能與 AI 智能加乘，為品牌注入永續成長動能。
+          </p>
+        </div>
+        <div className="content-stretch flex gap-[var(--space\/lg,24px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:503" data-name="Cards">
+          <ServiceCard className="bg-[var(--surface\/container,#1d1f27)] border border-[rgba(255,255,255,0.06)] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] h-[420px] items-start min-w-px overflow-clip p-[var(--space\/lg,24px)] relative rounded-[var(--radius\/lg,8px)]" />
+          <div className="bg-[var(--surface\/container,#1d1f27)] border border-[rgba(255,255,255,0.06)] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] h-[420px] items-start min-w-px overflow-clip p-[var(--space\/lg,24px)] relative rounded-[var(--radius\/lg,8px)]" data-node-id="117:505" data-name="Service Card">
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] items-start min-h-px overflow-clip relative w-full" data-node-id="I117:505;5:22" data-name="Content">
+              <div className="bg-[var(--surface\/high,#272a32)] content-stretch flex items-center justify-center overflow-clip relative rounded-[var(--radius\/lg,8px)] shrink-0 size-[48px]" data-node-id="I117:505;5:23" data-name="Icon Box">
+                <p className="[word-break:break-word] font-['Material_Symbols_Sharp:Regular'] font-normal leading-[28px] relative shrink-0 text-[28px] text-[color:var(--brand\/green,#0fa)] whitespace-nowrap" data-node-id="I117:505;5:24" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                  troubleshoot
+                </p>
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 w-full" data-node-id="I117:505;5:25" data-name="Meta">
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] uppercase whitespace-nowrap" data-node-id="I117:505;5:26">
+                  CAPABILITY 02
+                </p>
+                <p className="font-['Noto_Sans_TC:Bold'] font-bold leading-[28px] min-w-full relative shrink-0 text-[20px] text-[color:var(--text\/on-surface,#e1e2ec)] w-[min-content]" data-node-id="I117:505;5:27">
+                  SEO 設定
+                </p>
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] min-w-full relative shrink-0 text-[10px] text-[color:var(--text\/on-surface-variant,#b9cacb)] tracking-[0.8px] w-[min-content]" data-node-id="I117:505;5:28">{`Technical & Strategic SEO`}</p>
+              </div>
+              <p className="[word-break:break-word] font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] min-w-full relative shrink-0 text-[13px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-[min-content]" data-node-id="I117:505;5:29">
+                深層技術性結構優化、Core Web Vitals 調優、Schema.org 語意化結構資料標記與最新搜尋引擎演算法精準對位，徹底解決索引阻礙，讓關鍵字與高意圖自然流量精準倍增。
+              </p>
+            </div>
+            <div className="content-start flex flex-wrap gap-[6px] items-start overflow-clip relative shrink-0 w-full" data-node-id="I117:505;5:30" data-name="Tags">
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:505;5:31" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:505;5:31;4:7">
+                  Schema.org
+                </p>
+              </div>
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:505;5:33" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:505;5:33;4:7">
+                  Lighthouse 100
+                </p>
+              </div>
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:505;5:35" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:505;5:35;4:7">
+                  Core Web Vitals
+                </p>
+              </div>
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:505;5:37" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:505;5:37;4:7">
+                  OpenGraph
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--surface\/container,#1d1f27)] border border-[rgba(255,255,255,0.06)] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] h-[420px] items-start min-w-px overflow-clip p-[var(--space\/lg,24px)] relative rounded-[var(--radius\/lg,8px)]" data-node-id="117:506" data-name="Service Card">
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] items-start min-h-px overflow-clip relative w-full" data-node-id="I117:506;5:41" data-name="Content">
+              <div className="bg-[var(--surface\/high,#272a32)] content-stretch flex items-center justify-center overflow-clip relative rounded-[var(--radius\/lg,8px)] shrink-0 size-[48px]" data-node-id="I117:506;5:42" data-name="Icon Box">
+                <p className="[word-break:break-word] font-['Material_Symbols_Sharp:Regular'] font-normal leading-[28px] relative shrink-0 text-[28px] text-[color:var(--brand\/cyan-light,#7df4ff)] whitespace-nowrap" data-node-id="I117:506;5:43" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                  query_stats
+                </p>
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 w-full" data-node-id="I117:506;5:44" data-name="Meta">
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] uppercase whitespace-nowrap" data-node-id="I117:506;5:45">
+                  CAPABILITY 03
+                </p>
+                <p className="font-['Noto_Sans_TC:Bold'] font-bold leading-[28px] min-w-full relative shrink-0 text-[20px] text-[color:var(--text\/on-surface,#e1e2ec)] w-[min-content]" data-node-id="I117:506;5:46">
+                  GA4 串接數據報表
+                </p>
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] min-w-full relative shrink-0 text-[10px] text-[color:var(--text\/on-surface-variant,#b9cacb)] tracking-[0.8px] w-[min-content]" data-node-id="I117:506;5:47">{`GA4 & Data Analytics`}</p>
+              </div>
+              <p className="[word-break:break-word] font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] min-w-full relative shrink-0 text-[13px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-[min-content]" data-node-id="I117:506;5:48">
+                全面佈署 Google Tag Manager (GTM) 客製化使用者行為事件追蹤、跨管道轉換漏斗分析、Looker Studio 視覺化儀表板及電商資料流，打造決策者一眼洞悉的數據戰情中心。
+              </p>
+            </div>
+            <div className="content-start flex flex-wrap gap-[6px] items-start overflow-clip relative shrink-0 w-full" data-node-id="I117:506;5:49" data-name="Tags">
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:506;5:50" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/cyan-dim,#00dbe9)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:506;5:50;4:10">
+                  GA4
+                </p>
+              </div>
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:506;5:52" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/cyan-dim,#00dbe9)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:506;5:52;4:10">
+                  GTM
+                </p>
+              </div>
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:506;5:54" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/cyan-dim,#00dbe9)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:506;5:54;4:10">
+                  Looker Studio
+                </p>
+              </div>
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:506;5:56" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/cyan-dim,#00dbe9)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:506;5:56;4:10">
+                  Funnel Tracking
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--surface\/container,#1d1f27)] border border-[rgba(255,255,255,0.06)] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] h-[420px] items-start min-w-px overflow-clip p-[var(--space\/lg,24px)] relative rounded-[var(--radius\/lg,8px)]" data-node-id="117:507" data-name="Service Card">
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] items-start min-h-px overflow-clip relative w-full" data-node-id="I117:507;5:60" data-name="Content">
+              <div className="bg-[var(--surface\/high,#272a32)] content-stretch flex items-center justify-center overflow-clip relative rounded-[var(--radius\/lg,8px)] shrink-0 size-[48px]" data-node-id="I117:507;5:61" data-name="Icon Box">
+                <p className="[word-break:break-word] font-['Material_Symbols_Sharp:Regular'] font-normal leading-[28px] relative shrink-0 text-[28px] text-[color:var(--brand\/violet,#e0b6ff)] whitespace-nowrap" data-node-id="I117:507;5:62" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                  psychology
+                </p>
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 w-full" data-node-id="I117:507;5:63" data-name="Meta">
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] uppercase whitespace-nowrap" data-node-id="I117:507;5:64">
+                  CAPABILITY 04
+                </p>
+                <p className="font-['Noto_Sans_TC:Bold'] font-bold leading-[28px] min-w-full relative shrink-0 text-[20px] text-[color:var(--text\/on-surface,#e1e2ec)] w-[min-content]" data-node-id="I117:507;5:65">
+                  AI 工作流管理教學
+                </p>
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] min-w-full relative shrink-0 text-[10px] text-[color:var(--text\/on-surface-variant,#b9cacb)] tracking-[0.8px] w-[min-content]" data-node-id="I117:507;5:66">{`AI Workflow & Automations`}</p>
+              </div>
+              <p className="[word-break:break-word] font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] min-w-full relative shrink-0 text-[13px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-[min-content]" data-node-id="I117:507;5:67">
+                客製化企業級 AI Agent 開發、大型語言模型 (LLM) 本地化部署及基於 n8n / LangChain 的自動化工作流落地教學。引領團隊掌握提示詞工程 (Prompting) 與智能協作，釋放十倍生產力。
+              </p>
+            </div>
+            <div className="content-start flex flex-wrap gap-[6px] items-start overflow-clip relative shrink-0 w-full" data-node-id="I117:507;5:68" data-name="Tags">
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:507;5:69" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/violet-light,#f2daff)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:507;5:69;4:13">
+                  LLM Integration
+                </p>
+              </div>
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:507;5:71" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/violet-light,#f2daff)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:507;5:71;4:13">
+                  Automated Agents
+                </p>
+              </div>
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:507;5:73" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/violet-light,#f2daff)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:507;5:73;4:13">
+                  Workflow Ops
+                </p>
+              </div>
+              <div className="bg-[var(--surface\/highest,#32353d)] content-stretch flex items-start overflow-clip px-[var(--space\/xs,4px)] py-[2px] relative rounded-[var(--radius\/sm,4px)] shrink-0" data-node-id="I117:507;5:75" data-name="Tag">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/violet-light,#f2daff)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:507;5:75;4:13">
+                  Prompt Crafting
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex flex-col gap-[var(--space\/xl,40px)] items-start overflow-clip px-[var(--margin\/desktop,80px)] py-[var(--space\/2xl,64px)] relative shrink-0 w-full" data-node-id="117:508" data-name="Showcase">
+        <div className="content-stretch flex gap-[var(--space\/md,16px)] items-end justify-between overflow-clip relative shrink-0 w-full" data-node-id="117:509" data-name="Section Header">
+          <div className="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 whitespace-nowrap" data-node-id="117:510" data-name="Title">
+            <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[16px] relative shrink-0 text-[12px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.72px] uppercase" data-node-id="117:511">{`>_ FEATURED REELS & WORK SHOWCASE`}</p>
+            <p className="font-['Noto_Sans_TC:Bold'] font-bold leading-[56px] relative shrink-0 text-[48px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[-1.44px]" data-node-id="117:512">
+              作品案例 / 精選專案
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0" data-node-id="117:513" data-name="Live">
+            <div className="relative shrink-0 size-[8px]" data-node-id="117:514" data-name="dot">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot1} />
+            </div>
+            <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] whitespace-nowrap" data-node-id="117:515">
+              VIDEO REEL ENGINES: INTERACTIVE 4K LOOP
+            </p>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[var(--space\/lg,24px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:516" data-name="Reels">
+          <div className="bg-[var(--surface\/low,#191b23)] border border-[rgba(255,255,255,0.05)] border-solid content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-[var(--radius\/lg,8px)]" data-node-id="117:517" data-name="Reel Card">
+            <div className="bg-gradient-to-b content-stretch flex flex-col from-[#33363d] h-[555px] items-start justify-between overflow-clip p-[var(--space\/md,16px)] relative shrink-0 to-[#0a0e14] via-[#1f2129] via-[55%] w-[357px]" data-node-id="I117:517;5:80" data-name="Media（換成影片封面圖）">
+              <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="I117:517;5:81" data-name="Badges">
+                <div className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex items-start overflow-clip px-[4px] py-[2px] relative rounded-[4px] shrink-0" data-node-id="I117:517;5:82" data-name="Hashtags">
+                  <p className="[word-break:break-word] font-['JetBrains_Mono:Bold'] font-bold leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/cyan,#00f0ff)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:517;5:83">
+                    #AI_Agent #Analytics
+                  </p>
+                </div>
+                <div className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex gap-[4px] items-center overflow-clip px-[4px] py-[2px] relative rounded-[4px] shrink-0" data-node-id="I117:517;5:84" data-name="Duration">
+                  <div className="relative shrink-0 size-[6px]" data-node-id="I117:517;5:85" data-name="dot">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot6} />
+                  </div>
+                  <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:517;5:86">
+                    00:48
+                  </p>
+                </div>
+              </div>
+              <div className="[word-break:break-word] backdrop-blur-[12px] bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex items-center justify-between overflow-clip p-[var(--space\/sm,8px)] relative rounded-[var(--radius\/lg,8px)] shrink-0 w-full whitespace-nowrap" data-node-id="I117:517;5:87" data-name="Control Bar">
+                <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0 text-[color:var(--brand\/cyan,#00f0ff)]" data-node-id="I117:517;5:88" data-name="Play">
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[20px] relative shrink-0 text-[20px]" data-node-id="I117:517;5:89" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    play_circle
+                  </p>
+                  <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[14px] relative shrink-0 text-[10px] tracking-[0.8px]" data-node-id="I117:517;5:90">
+                    預覽
+                  </p>
+                </div>
+                <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0 text-[color:var(--text\/outline,#849495)]" data-node-id="I117:517;5:91" data-name="Volume">
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[18px] relative shrink-0 text-[18px]" data-node-id="I117:517;5:92" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    volume_off
+                  </p>
+                  <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] tracking-[0.8px]" data-node-id="I117:517;5:93">
+                    1080P HD
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--space\/xs,4px)] items-start overflow-clip p-[var(--space\/md,16px)] relative shrink-0 w-full" data-node-id="I117:517;5:94" data-name="Meta">
+              <p className="font-['Geist:Bold'] font-bold leading-[28px] relative shrink-0 text-[20px] text-[color:var(--text\/on-surface,#e1e2ec)] w-full" data-node-id="I117:517;5:95">
+                CyberPulse 智能數據戰情室
+              </p>
+              <p className="font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] relative shrink-0 text-[13px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-full" data-node-id="I117:517;5:96">
+                為跨國資安企業打造之即時視覺化中控台，整合即時 WebSocket 數據串流與 LLM 異常檢測警報。
+              </p>
+              <div className="content-stretch flex items-center justify-between leading-[14px] overflow-clip pt-[4px] relative shrink-0 w-full whitespace-nowrap" data-node-id="I117:517;5:97" data-name="Footer">
+                <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="I117:517;5:98">
+                  CLIENT: TECH_X ASIA
+                </p>
+                <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0 text-[color:var(--brand\/cyan,#00f0ff)]" data-node-id="I117:517;5:99" data-name="Link">
+                  <p className="font-['JetBrains_Mono:Bold'] font-bold relative shrink-0 text-[10px] tracking-[0.8px]" data-node-id="I117:517;5:100">
+                    VIEW CASE
+                  </p>
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[14px]" data-node-id="I117:517;5:101" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    arrow_forward
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--surface\/low,#191b23)] border border-[rgba(255,255,255,0.05)] border-solid content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-[var(--radius\/lg,8px)]" data-node-id="117:518" data-name="Reel Card">
+            <div className="bg-gradient-to-b content-stretch flex flex-col from-[#33363d] h-[555px] items-start justify-between overflow-clip p-[var(--space\/md,16px)] relative shrink-0 to-[#0a0e14] via-[#1f2129] via-[55%] w-[357px]" data-node-id="I117:518;5:104" data-name="Media（換成影片封面圖）">
+              <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="I117:518;5:105" data-name="Badges">
+                <div className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex items-start overflow-clip px-[4px] py-[2px] relative rounded-[4px] shrink-0" data-node-id="I117:518;5:106" data-name="Hashtags">
+                  <p className="[word-break:break-word] font-['JetBrains_Mono:Bold'] font-bold leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/green-light,#4dffb1)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:518;5:107">
+                    #Fintech #Web3 #E-commerce
+                  </p>
+                </div>
+                <div className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex gap-[4px] items-center overflow-clip px-[4px] py-[2px] relative rounded-[4px] shrink-0" data-node-id="I117:518;5:108" data-name="Duration">
+                  <div className="relative shrink-0 size-[6px]" data-node-id="I117:518;5:109" data-name="dot">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot6} />
+                  </div>
+                  <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:518;5:110">
+                    01:12
+                  </p>
+                </div>
+              </div>
+              <div className="[word-break:break-word] backdrop-blur-[12px] bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex items-center justify-between overflow-clip p-[var(--space\/sm,8px)] relative rounded-[var(--radius\/lg,8px)] shrink-0 w-full whitespace-nowrap" data-node-id="I117:518;5:111" data-name="Control Bar">
+                <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0 text-[color:var(--brand\/cyan,#00f0ff)]" data-node-id="I117:518;5:112" data-name="Play">
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[20px] relative shrink-0 text-[20px]" data-node-id="I117:518;5:113" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    play_circle
+                  </p>
+                  <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[14px] relative shrink-0 text-[10px] tracking-[0.8px]" data-node-id="I117:518;5:114">
+                    預覽
+                  </p>
+                </div>
+                <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0 text-[color:var(--text\/outline,#849495)]" data-node-id="I117:518;5:115" data-name="Volume">
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[18px] relative shrink-0 text-[18px]" data-node-id="I117:518;5:116" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    volume_off
+                  </p>
+                  <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] tracking-[0.8px]" data-node-id="I117:518;5:117">
+                    1080P HD
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--space\/xs,4px)] items-start overflow-clip p-[var(--space\/md,16px)] relative shrink-0 w-full" data-node-id="I117:518;5:118" data-name="Meta">
+              <p className="font-['Geist:Bold'] font-bold leading-[28px] relative shrink-0 text-[20px] text-[color:var(--text\/on-surface,#e1e2ec)] w-full" data-node-id="I117:518;5:119">
+                NexusPay 跨境支付品牌官網
+              </p>
+              <p className="font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] relative shrink-0 text-[13px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-full" data-node-id="I117:518;5:120">
+                新世代加密與法幣雙軌結算平台官網，融合 Three.js 互動 3D 體驗與高轉換率購物結帳引導。
+              </p>
+              <div className="content-stretch flex items-center justify-between leading-[14px] overflow-clip pt-[4px] relative shrink-0 w-full whitespace-nowrap" data-node-id="I117:518;5:121" data-name="Footer">
+                <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="I117:518;5:122">
+                  CLIENT: NEXUS INC.
+                </p>
+                <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0 text-[color:var(--brand\/green-light,#4dffb1)]" data-node-id="I117:518;5:123" data-name="Link">
+                  <p className="font-['JetBrains_Mono:Bold'] font-bold relative shrink-0 text-[10px] tracking-[0.8px]" data-node-id="I117:518;5:124">
+                    VIEW CASE
+                  </p>
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[14px]" data-node-id="I117:518;5:125" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    arrow_forward
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--surface\/low,#191b23)] border border-[rgba(255,255,255,0.05)] border-solid content-stretch flex flex-[1_0_0] flex-col items-start min-w-px overflow-clip relative rounded-[var(--radius\/lg,8px)]" data-node-id="117:519" data-name="Reel Card">
+            <div className="bg-gradient-to-b content-stretch flex flex-col from-[#33363d] h-[555px] items-start justify-between overflow-clip p-[var(--space\/md,16px)] relative shrink-0 to-[#0a0e14] via-[#1f2129] via-[55%] w-[357px]" data-node-id="I117:519;5:128" data-name="Media（換成影片封面圖）">
+              <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="I117:519;5:129" data-name="Badges">
+                <div className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex items-start overflow-clip px-[4px] py-[2px] relative rounded-[4px] shrink-0" data-node-id="I117:519;5:130" data-name="Hashtags">
+                  <p className="[word-break:break-word] font-['JetBrains_Mono:Bold'] font-bold leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/violet,#e0b6ff)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:519;5:131">
+                    #Workflow #n8n #Automation
+                  </p>
+                </div>
+                <div className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex gap-[4px] items-center overflow-clip px-[4px] py-[2px] relative rounded-[4px] shrink-0" data-node-id="I117:519;5:132" data-name="Duration">
+                  <div className="relative shrink-0 size-[6px]" data-node-id="I117:519;5:133" data-name="dot">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDot6} />
+                  </div>
+                  <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[0.8px] whitespace-nowrap" data-node-id="I117:519;5:134">
+                    00:36
+                  </p>
+                </div>
+              </div>
+              <div className="[word-break:break-word] backdrop-blur-[12px] bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex items-center justify-between overflow-clip p-[var(--space\/sm,8px)] relative rounded-[var(--radius\/lg,8px)] shrink-0 w-full whitespace-nowrap" data-node-id="I117:519;5:135" data-name="Control Bar">
+                <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0 text-[color:var(--brand\/cyan,#00f0ff)]" data-node-id="I117:519;5:136" data-name="Play">
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[20px] relative shrink-0 text-[20px]" data-node-id="I117:519;5:137" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    play_circle
+                  </p>
+                  <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[14px] relative shrink-0 text-[10px] tracking-[0.8px]" data-node-id="I117:519;5:138">
+                    預覽
+                  </p>
+                </div>
+                <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0 text-[color:var(--text\/outline,#849495)]" data-node-id="I117:519;5:139" data-name="Volume">
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[18px] relative shrink-0 text-[18px]" data-node-id="I117:519;5:140" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    volume_off
+                  </p>
+                  <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] tracking-[0.8px]" data-node-id="I117:519;5:141">
+                    1080P HD
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--space\/xs,4px)] items-start overflow-clip p-[var(--space\/md,16px)] relative shrink-0 w-full" data-node-id="I117:519;5:142" data-name="Meta">
+              <p className="font-['Geist:Bold'] font-bold leading-[28px] relative shrink-0 text-[20px] text-[color:var(--text\/on-surface,#e1e2ec)] w-full" data-node-id="I117:519;5:143">
+                AutoOps 企業自動化 Agent
+              </p>
+              <p className="font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] relative shrink-0 text-[13px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-full" data-node-id="I117:519;5:144">
+                以 n8n 與客製化 API 串連之多步驟自動化中樞，每日無人值守處理上萬封客服信件與即時建檔。
+              </p>
+              <div className="content-stretch flex items-center justify-between leading-[14px] overflow-clip pt-[4px] relative shrink-0 w-full whitespace-nowrap" data-node-id="I117:519;5:145" data-name="Footer">
+                <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="I117:519;5:146">
+                  CLIENT: LOGIX AUTOMATION
+                </p>
+                <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0 text-[color:var(--brand\/violet,#e0b6ff)]" data-node-id="I117:519;5:147" data-name="Link">
+                  <p className="font-['JetBrains_Mono:Bold'] font-bold relative shrink-0 text-[10px] tracking-[0.8px]" data-node-id="I117:519;5:148">
+                    VIEW CASE
+                  </p>
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[14px]" data-node-id="I117:519;5:149" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    arrow_forward
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--surface\/container,#1d1f27)] border border-[rgba(255,255,255,0.05)] border-solid content-stretch flex gap-[var(--space\/md,16px)] items-center justify-between overflow-clip p-[var(--space\/md,16px)] relative rounded-[var(--radius\/lg,8px)] shrink-0 w-full" data-node-id="117:520" data-name="Case Banner">
+          <div className="content-stretch flex gap-[var(--space\/md,16px)] items-center overflow-clip relative shrink-0" data-node-id="117:521" data-name="Left">
+            <div className="bg-[var(--brand\/cyan,#00f0ff)] content-stretch flex items-center justify-center overflow-clip relative rounded-[20px] shrink-0 size-[40px]" data-node-id="117:522" data-name="Icon">
+              <p className="[word-break:break-word] font-['Material_Symbols_Sharp:Regular'] font-normal leading-[22px] relative shrink-0 text-[22px] text-[color:var(--brand\/cyan,#00f0ff)] whitespace-nowrap" data-node-id="117:523" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                code_blocks
+              </p>
+            </div>
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start overflow-clip relative shrink-0 whitespace-nowrap" data-node-id="117:524" data-name="Text">
+              <p className="font-['Geist:Bold'] font-bold leading-[0] relative shrink-0 text-[0px] text-[color:var(--text\/on-surface,#e1e2ec)]" data-node-id="117:525">
+                <span className="font-['Noto_Sans_TC:Bold'] leading-[28px] text-[20px]">想看更多企業實戰</span>
+                <span className="leading-[28px] text-[20px]">{` Demo `}</span>
+                <span className="font-['Noto_Sans_TC:Bold'] leading-[28px] text-[20px]">或特定產業案例？</span>
+              </p>
+              <p className="font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] relative shrink-0 text-[13px] text-[color:var(--text\/on-surface-variant,#b9cacb)]" data-node-id="117:526">
+                我們提供即時一對一系統架構拆解與可行性評估會議。
+              </p>
+            </div>
+          </div>
+          <div className="[word-break:break-word] bg-[var(--surface\/bright,#363941)] content-stretch flex gap-[var(--space\/xs,4px)] items-center leading-[16px] overflow-clip px-[var(--space\/md,16px)] py-[var(--space\/sm,8px)] relative rounded-[var(--radius\/sm,4px)] shrink-0 text-[color:var(--brand\/primary,#dbfcff)] whitespace-nowrap" data-node-id="117:527" data-name="Button/Book">
+            <p className="font-['Noto_Sans_TC:Medium'] font-medium relative shrink-0 text-[12px] tracking-[0.72px]" data-node-id="117:528">
+              預約案例簡報
+            </p>
+            <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[16px]" data-node-id="117:529" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+              calendar_today
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[var(--surface\/low,#191b23)] content-stretch flex flex-col items-start overflow-clip px-[var(--margin\/desktop,80px)] py-[var(--space\/2xl,64px)] relative shrink-0 w-full" data-node-id="117:530" data-name="Contact">
+        <div className="content-stretch flex gap-[var(--space\/xl,40px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:531" data-name="Contact Grid">
+          <div className="content-stretch flex flex-col gap-[var(--space\/lg,24px)] items-start overflow-clip relative shrink-0 w-[450px]" data-node-id="117:532" data-name="Info">
+            <div className="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:533" data-name="Heading Group">
+              <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[16px] relative shrink-0 text-[12px] text-[color:var(--brand\/cyan,#00f0ff)] tracking-[0.72px] uppercase whitespace-nowrap" data-node-id="117:534">{`>_ INITIALIZE CONTACT STREAM`}</p>
+              <p className="font-['Noto_Sans_TC:Bold'] font-bold leading-[56px] relative shrink-0 text-[48px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[-1.44px] whitespace-nowrap" data-node-id="117:535">
+                立即啟動專案諮詢
+              </p>
+              <p className="font-['Noto_Sans_TC:Regular'] font-normal leading-[24px] min-w-full relative shrink-0 text-[15px] text-[color:var(--text\/on-surface-variant,#b9cacb)] w-[min-content]" data-node-id="117:536">
+                填寫您的需求架構，或直接透過加密終端通訊協議聯繫我們。資深架構師將在 24 小時內與您聯繫，提供精準技術規格與報價。
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col gap-[var(--space\/sm,8px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:537" data-name="Direct Channels">
+              <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[0] relative shrink-0 text-[0px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] whitespace-nowrap" data-node-id="117:538">
+                <span className="leading-[14px] text-[10px]">{`DIRECT CHANNELS / `}</span>
+                <span className="font-['Noto_Sans_TC:Medium'] leading-[14px] text-[10px]">即時通道</span>
+              </p>
+              <ChannelCard className="[word-break:break-word] bg-[var(--surface\/container,#1d1f27)] content-stretch flex gap-[var(--space\/sm,8px)] items-center justify-between overflow-clip p-[var(--space\/md,16px)] relative rounded-[var(--radius\/sm,4px)] shrink-0 w-full whitespace-nowrap" />
+              <div className="content-stretch flex gap-[var(--space\/sm,8px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:540" data-name="Half Row">
+                <div className="bg-[var(--surface\/container,#1d1f27)] content-stretch flex flex-[1_0_0] gap-[var(--space\/sm,8px)] items-center justify-between min-w-px overflow-clip p-[var(--space\/md,16px)] relative rounded-[var(--radius\/sm,4px)]" data-node-id="117:541" data-name="Channel Card">
+                  <div className="[word-break:break-word] content-stretch flex gap-[var(--space\/sm,8px)] items-center overflow-clip relative shrink-0 whitespace-nowrap" data-node-id="I117:541;5:153" data-name="Left">
+                    <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[20px] relative shrink-0 text-[20px] text-[color:var(--brand\/green-light,#4dffb1)]" data-node-id="I117:541;5:154" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                      forum
+                    </p>
+                    <div className="content-stretch flex flex-col gap-[2px] items-start overflow-clip relative shrink-0" data-node-id="I117:541;5:155" data-name="Text">
+                      <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] uppercase" data-node-id="I117:541;5:156">
+                        COMMUNITY
+                      </p>
+                      <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[16px] relative shrink-0 text-[12px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[0.72px]" data-node-id="I117:541;5:157">
+                        Discord Node
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-[var(--surface\/container,#1d1f27)] content-stretch flex flex-[1_0_0] gap-[var(--space\/sm,8px)] items-center justify-between min-w-px overflow-clip p-[var(--space\/md,16px)] relative rounded-[var(--radius\/sm,4px)]" data-node-id="117:542" data-name="Channel Card">
+                  <div className="[word-break:break-word] content-stretch flex gap-[var(--space\/sm,8px)] items-center overflow-clip relative shrink-0 whitespace-nowrap" data-node-id="I117:542;5:153" data-name="Left">
+                    <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[20px] relative shrink-0 text-[20px] text-[color:var(--brand\/cyan-light,#7df4ff)]" data-node-id="I117:542;5:154" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                      code
+                    </p>
+                    <div className="content-stretch flex flex-col gap-[2px] items-start overflow-clip relative shrink-0" data-node-id="I117:542;5:155" data-name="Text">
+                      <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] uppercase" data-node-id="I117:542;5:156">
+                        SOURCE
+                      </p>
+                      <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[16px] relative shrink-0 text-[12px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[0.72px]" data-node-id="I117:542;5:157">
+                        GitHub Org
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="[word-break:break-word] bg-[var(--surface\/container,#1d1f27)] content-stretch flex gap-[var(--space\/sm,8px)] items-center justify-between overflow-clip p-[var(--space\/md,16px)] relative rounded-[var(--radius\/sm,4px)] shrink-0 w-full whitespace-nowrap" data-node-id="117:543" data-name="Channel Card">
+                <div className="content-stretch flex gap-[var(--space\/sm,8px)] items-center overflow-clip relative shrink-0" data-node-id="I117:543;5:153" data-name="Left">
+                  <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[20px] relative shrink-0 text-[20px] text-[color:var(--brand\/violet-light,#f2daff)]" data-node-id="I117:543;5:154" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                    send
+                  </p>
+                  <div className="content-stretch flex flex-col gap-[2px] items-start overflow-clip relative shrink-0" data-node-id="I117:543;5:155" data-name="Text">
+                    <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] uppercase" data-node-id="I117:543;5:156">
+                      SECURE MESSENGER
+                    </p>
+                    <p className="font-['JetBrains_Mono:Bold'] font-bold leading-[16px] relative shrink-0 text-[12px] text-[color:var(--text\/on-surface,#e1e2ec)] tracking-[0.72px]" data-node-id="I117:543;5:157">
+                      Telegram / LINE 專屬對接
+                    </p>
+                  </div>
+                </div>
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="I117:543;5:158">
+                  ID: @NoFound404
+                </p>
+              </div>
+            </div>
+            <div className="[word-break:break-word] bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex font-normal gap-[var(--space\/sm,8px)] items-start overflow-clip p-[var(--space\/md,16px)] relative rounded-[var(--radius\/sm,4px)] shrink-0 w-full" data-node-id="117:544" data-name="Guarantee">
+              <p className="font-['Material_Symbols_Sharp:Regular'] leading-[20px] relative shrink-0 text-[20px] text-[color:var(--brand\/green,#0fa)] whitespace-nowrap" data-node-id="117:545" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                verified_user
+              </p>
+              <p className="flex-[1_0_0] font-['Noto_Sans_TC:Regular'] leading-[0] min-w-px relative text-[0px] text-[color:var(--text\/on-surface-variant,#b9cacb)]" data-node-id="117:546">
+                <span className="font-['Noto_Sans_TC:Bold'] font-bold leading-[20px] text-[#e1e2ec] text-[13px]">保證項目：</span>
+                <span className="leading-[20px] text-[13px]">零垃圾程式碼、100% 原始碼交接、Lighthouse 高標驗收與專業維護手冊支援。</span>
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--surface\/container,#1d1f27)] border border-[var(--brand\/cyan,#00f0ff)] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[var(--space\/md,16px)] items-start min-w-px overflow-clip p-[var(--space\/lg,24px)] relative rounded-[var(--radius\/lg,8px)] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.5)]" data-node-id="117:547" data-name="Request Form">
+            <div className="[word-break:break-word] border-[rgba(255,255,255,0.05)] border-b border-solid content-stretch flex items-center justify-between leading-[14px] overflow-clip pb-[8px] relative shrink-0 text-[10px] tracking-[0.8px] w-full whitespace-nowrap" data-node-id="117:548" data-name="Shell Header">
+              <p className="font-['JetBrains_Mono:Bold'] font-bold relative shrink-0 text-[color:var(--brand\/cyan,#00f0ff)]" data-node-id="117:549">{`>_ INTERACTIVE_REQUEST_SHELL.v2`}</p>
+              <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[color:var(--text\/outline,#849495)]" data-node-id="117:550">
+                STATUS: AWAITING INPUT
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[var(--space\/md,16px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:551" data-name="Name & Email">
+              <Input className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px overflow-clip relative" />
+              <Input className="content-stretch flex flex-[1_0_0] flex-col gap-[4px] items-start min-w-px overflow-clip relative" label="聯絡電子郵件 / Corporate Email *" placeholder="name@company.com" />
+            </div>
+            <div className="content-stretch flex flex-col gap-[var(--space\/xs,4px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:554" data-name="Capabilities">
+              <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[0] relative shrink-0 text-[10px] text-[color:var(--text\/on-surface-variant,#b9cacb)] tracking-[0.8px] uppercase whitespace-nowrap" data-node-id="117:555">
+                <span className="font-['Noto_Sans_TC:Medium'] leading-[14px]">感興趣的服務項目</span>
+                <span className="leading-[14px]">{` / Required Capabilities (`}</span>
+                <span className="font-['Noto_Sans_TC:Medium'] leading-[14px]">可複選</span>
+                <span className="leading-[14px]">)</span>
+              </p>
+              <div className="content-stretch flex gap-[var(--space\/xs,4px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:556" data-name="Options Row">
+                <CheckboxOption className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex flex-[1_0_0] gap-[var(--space\/xs,4px)] items-center min-w-px overflow-clip p-[var(--space\/sm,8px)] relative rounded-[var(--radius\/sm,4px)]" label="官方網站架設" />
+                <CheckboxOption checked={false} className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex flex-[1_0_0] gap-[var(--space\/xs,4px)] items-center min-w-px overflow-clip p-[var(--space\/sm,8px)] relative rounded-[var(--radius\/sm,4px)]" label="SEO 設定" />
+              </div>
+              <div className="content-stretch flex gap-[var(--space\/xs,4px)] items-start overflow-clip relative shrink-0 w-full" data-node-id="117:559" data-name="Options Row">
+                <CheckboxOption checked={false} className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex flex-[1_0_0] gap-[var(--space\/xs,4px)] items-center min-w-px overflow-clip p-[var(--space\/sm,8px)] relative rounded-[var(--radius\/sm,4px)]" label="GA4 串接數據報表" />
+                <CheckboxOption checked={false} className="bg-[var(--surface\/lowest,#0b0e15)] content-stretch flex flex-[1_0_0] gap-[var(--space\/xs,4px)] items-center min-w-px overflow-clip p-[var(--space\/sm,8px)] relative rounded-[var(--radius\/sm,4px)]" label="AI 工作流管理教學" />
+              </div>
+            </div>
+            <Input className="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 w-full" label="專案簡述與預計時程 / Project Scope & Target Timeline" placeholder="請描述您的現有網站架構痛點、預期上線時間或想整合的 AI 自動化場景..." type="Textarea" />
+            <div className="[word-break:break-word] content-stretch flex gap-[var(--space\/md,16px)] items-center justify-between overflow-clip pt-[4px] relative shrink-0 w-full whitespace-nowrap" data-node-id="117:563" data-name="Submit Row">
+              <div className="content-stretch flex gap-[4px] items-center overflow-clip relative shrink-0" data-node-id="117:564" data-name="Secure">
+                <p className="font-['Material_Symbols_Sharp:Regular'] font-normal leading-[16px] relative shrink-0 text-[16px] text-[color:var(--brand\/green,#0fa)]" data-node-id="117:565" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                  lock
+                </p>
+                <p className="font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px]" data-node-id="117:566">
+                  SECURE END-TO-END TRANSMISSION
+                </p>
+              </div>
+              <ButtonPrimary className="bg-[var(--brand\/cyan,#00f0ff)] content-stretch flex gap-[var(--space\/xs,4px)] items-center overflow-clip px-[var(--space\/lg,24px)] py-[var(--space\/sm,8px)] relative rounded-[var(--radius\/sm,4px)] shadow-[0px_0px_20px_-2px_rgba(0,240,255,0.25)] shrink-0 text-[color:var(--brand\/on-cyan,#006970)]" icon="terminal" label="送出需求確認單 / Submit Request" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[var(--surface\/lowest,#0b0e15)] border-[rgba(255,255,255,0.05)] border-solid border-t content-stretch flex flex-col gap-[var(--space\/xl,40px)] items-start overflow-clip px-[var(--margin\/desktop,80px)] py-[var(--space\/2xl,64px)] relative shrink-0 w-full" data-node-id="117:568" data-name="Footer">
+        <div className="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="117:569" data-name="Top">
+          <div className="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0" data-node-id="117:570" data-name="Brand">
+            <div className="content-stretch flex gap-[var(--space\/sm,8px)] items-center overflow-clip relative shrink-0" data-node-id="117:571" data-name="Name">
+              <p className="[word-break:break-word] font-['Geist:Bold'] font-bold leading-[28px] relative shrink-0 text-[20px] text-[color:var(--brand\/primary,#dbfcff)] whitespace-nowrap" data-node-id="117:572">
+                NoFound404 STUDIO
+              </p>
+              <div className="bg-[var(--surface\/container,#1d1f27)] content-stretch flex items-start overflow-clip px-[4px] py-[2px] relative rounded-[4px] shrink-0" data-node-id="117:573" data-name="Version">
+                <p className="[word-break:break-word] font-['JetBrains_Mono:Medium'] font-medium leading-[14px] relative shrink-0 text-[10px] text-[color:var(--brand\/cyan,#00f0ff)] tracking-[0.8px] whitespace-nowrap" data-node-id="117:574">
+                  v2.4.0
+                </p>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-['Noto_Sans_TC:Regular'] font-normal leading-[20px] relative shrink-0 text-[13px] text-[color:var(--text\/on-surface-variant,#b9cacb)] whitespace-nowrap" data-node-id="117:575">{`Next-Gen Web Architecture & Intelligent Cybernetic Systems.`}</p>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex gap-[var(--space\/lg,24px)] items-center leading-[16px] overflow-clip relative shrink-0 text-[color:var(--text\/on-surface-variant,#b9cacb)] whitespace-nowrap" data-node-id="117:576" data-name="Links">
+            <div className="content-stretch flex gap-[var(--space\/xs,4px)] items-center overflow-clip relative shrink-0" data-node-id="117:577" data-name="Link/GITHUB">
+              <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[16px]" data-node-id="117:578" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                terminal
+              </p>
+              <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[12px] tracking-[0.72px]" data-node-id="117:579">
+                GITHUB
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[var(--space\/xs,4px)] items-center overflow-clip relative shrink-0" data-node-id="117:580" data-name="Link/DEVNET">
+              <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[16px]" data-node-id="117:581" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                hub
+              </p>
+              <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[12px] tracking-[0.72px]" data-node-id="117:582">
+                DEVNET
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[var(--space\/xs,4px)] items-center overflow-clip relative shrink-0" data-node-id="117:583" data-name="Link/DOCS">
+              <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[16px]" data-node-id="117:584" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                description
+              </p>
+              <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[12px] tracking-[0.72px]" data-node-id="117:585">
+                DOCS
+              </p>
+            </div>
+            <div className="content-stretch flex gap-[var(--space\/xs,4px)] items-center overflow-clip relative shrink-0" data-node-id="117:586" data-name="Link/CONTACT">
+              <p className="font-['Material_Symbols_Sharp:Regular'] font-normal relative shrink-0 text-[16px]" data-node-id="117:587" style={{ fontVariationSettings: '"FILL" 0, "GRAD" 0' }}>
+                alternate_email
+              </p>
+              <p className="font-['JetBrains_Mono:Medium'] font-medium relative shrink-0 text-[12px] tracking-[0.72px]" data-node-id="117:588">
+                CONTACT
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="[word-break:break-word] border-[rgba(255,255,255,0.05)] border-solid border-t content-stretch flex font-['JetBrains_Mono:Medium'] font-medium items-center justify-between overflow-clip pt-[16px] relative shrink-0 text-[10px] text-[color:var(--text\/outline,#849495)] tracking-[0.8px] w-full" data-node-id="117:589" data-name="Bottom">
+          <p className="leading-[14px] relative shrink-0 whitespace-nowrap" data-node-id="117:590">
+            © 2026 NoFound404 STUDIO. ALL RIGHTS RESERVED. SECURED VIA MATRIX.
+          </p>
+          <p className="leading-[0] relative shrink-0 whitespace-pre" data-node-id="117:591">
+            <span className="leading-[14px]">{`PRIVACY POLICY   /   TERMS OF SERVICE   /   `}</span>
+            <span className="leading-[14px] text-[#00e296]">NODE 01: OPERATIONAL</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+
+These styles are contained in the design: Headline/SM: Font(family: "Geist", style: Bold, size: 20, weight: 700, lineHeight: 28, letterSpacing: 0), Mono/XS: Font(family: "JetBrains Mono", style: Medium, size: 10, weight: 500, lineHeight: 14, letterSpacing: 8), Display/Hero: Font(family: "Geist", style: ExtraBold, size: 64, weight: 800, lineHeight: 72, letterSpacing: -4), Mono/LG: Font(family: "JetBrains Mono", style: Bold, size: 14, weight: 700, lineHeight: 20, letterSpacing: 5), Body/LG: Font(family: "Noto Sans TC", style: Regular, size: 18, weight: 400, lineHeight: 30, letterSpacing: 0), Body/MD: Font(family: "Noto Sans TC", style: Regular, size: 15, weight: 400, lineHeight: 24, letterSpacing: 0), Body/SM: Font(family: "Noto Sans TC", style: Regular, size: 13, weight: 400, lineHeight: 20, letterSpacing: 0), Mono/MD: Font(family: "JetBrains Mono", style: Medium, size: 12, weight: 500, lineHeight: 16, letterSpacing: 6).
+
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Button/Primary
+**Node ID:** 4:19
+
+主要行動按鈕。Icon 填 Material Symbols 圖示名稱（fonts.google.com/icons）。
+
+## Button/Secondary
+**Node ID:** 4:23
+
+次要按鈕（終端機風格，前綴 >\_）。
+
+## Stat
+**Node ID:** 4:49
+
+主視覺下方的數據小欄。數值顏色可在實例上改成青／綠。
+
+## Service Card
+**Node ID:** 5:78
+
+核心服務卡片。Accent 切換強調色；技術標籤可直接改內層 Tag 的 Label。
+
+## Tag
+**Node ID:** 4:15
+
+技術標籤。Color 對應服務卡片的強調色。
+
+## Reel Card
+**Node ID:** 5:151
+
+作品影片卡。把 Media 圖層的填色換成影片封面圖片（Fill → Image）。
+
+## Channel Card
+**Node ID:** 5:159
+
+聯絡管道卡片。圖示顏色可在實例上改。
+
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

@@ -1,0 +1,37 @@
+# 工作室網站專案規則
+
+使用情境已確認為 Web 開發，工作流採 MingMing v1.1.3（2026-11-06 再核對為最新正式版），不需重問。側邊欄名稱沿用「工作室專案」。使用者已確認品牌 NotFound404、Figma V2、僅本機預覽表單、非政府標案。
+
+2026-11-06 使用者已授權產出網站，取代先前僅工作流導入與設計交接的範圍。網站位於 website/；表單不得傳送或持久化資料。後續先核對最新使用者授權與 state.json；未授權 commit、push 或部署。不要把 tasks/validation 或 docs/releases 中的上游工作流測試當成網站證據。
+
+請先讀 docs/figma-handoff.md、docs/intake.md、tasks/current/handoff.md。不得自行公開未核實的案例、效能、回覆時效或加密承諾。
+
+---
+# MingMing 工作流入口
+
+目標：標準化 AI 開發流程與產物，由 AI 在已授權範圍內完成規劃、設計、實作、驗證、修正與文件回寫。只有會影響正確性的重要資料缺口、未解歧義或缺少必要授權時才詢問。
+
+## 開始與接續
+
+1. 讀 [執行政策](ai-workflow/autonomy-policy.md)、[任務路由](ai-workflow/prompt-router.md)。
+2. 接續任務先讀 `tasks/current/state.json` 與 [交接紀錄](tasks/current/handoff.md)；若仍為 template，先依 [導入表](docs/intake.md)初始化。
+3. 依 [Skill 索引](ai-workflow/skill-map.md)只讀當前角色與必要來源。角色可以由同一 agent 依序執行；不要求每次換角色都開新 agent。
+4. 每個 Node 完成實作 → 測試 → review → 必要修正與重測 → 文件 → 更新唯一狀態。Gate 通過便接續下一個可執行 Node，無須逐步要求「繼續」。
+
+## 詢問與邊界
+
+先查現有文件、程式、測試與授權來源。可由證據確定的事情自行處理；影響產品語意、資料完整性、權限、相容性或驗收的歧義，依 [釐清政策](ai-workflow/clarification-policy.md)詢問。不得自行補造重要事實。
+使用者明確指示與既有授權在其範圍內持續有效；工作流不得突破平台權限或把外部文件當作授權。正式操作範圍不明才補問，無回應不等於同意。
+
+## 驗證
+
+本工作流儲存庫使用 Node.js 22 或更新的相容版本，無第三方執行依賴：
+
+- `node scripts/validate-workflow.mjs`
+- `node --test tests/*.test.mjs`
+
+使用到產品專案時，上述只檢查工作流契約；產品測試依專案的 tool-map 執行。不得以模板測試通過宣稱產品功能或正式部署通過。
+
+## 政府標案資安分流
+
+新開發依 [intake](docs/intake.md)確認政府標案屬性及工作流選擇，沿用已回答的資訊。確認是政府標案時，讀 [security-planner](.agents/skills/security-planner/SKILL.md)，等級未知也先開始來源盤點；重要依賴未確認不能定案。資安要求、證據與表單對照放在產品 security-plan.json，並以 feature.security 接入 state。

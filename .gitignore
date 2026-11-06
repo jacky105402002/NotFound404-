@@ -1,0 +1,32 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs / temp
+*.log
+*.tmp
+.playwright-cli/
+.env
+.env.*
+!.env.example
+node_modules/
+
+# Workflow evidence logs are versioned artifacts.
+!tasks/**/reports/**/*.log
+
+# Security planner validation evidence must survive clean checkout.
+!tasks/validation/security-planner/**/*.log
+
+!tasks/validation/security-clauses/**/*.log
+
+!tasks/validation/security-execution/**/*.log
+
+!tasks/validation/release-v1.1.2-r1/**/*.log
+
+!tasks/validation/release-v1.1.3/**/*.log

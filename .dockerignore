@@ -1,0 +1,10 @@
+**
+!Dockerfile
+!website/
+!website/server.mjs
+!website/production.mjs
+!website/public/
+!website/public/**
+!website/licenses/
+!website/licenses/**
+

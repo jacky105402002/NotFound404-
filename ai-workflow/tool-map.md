@@ -1,0 +1,31 @@
+# Tool Map
+
+命令必須從專案設定與實際環境查證，不能把下表工具舉例當成已安裝。
+
+| 類型 | 用途 | 適用性 |
+|---|---|---|
+| git / rg / terminal | 讀取現況、差異、查證與執行 | 按可用性 |
+| test runner | AC、負向與回歸驗證 | 每個 Node 必須有實際驗證 |
+| lint / type / build | 專案品質檢查 | 依技術棧與變更判定，N/A 記原因 |
+| browser / UI testing | UI 狀態、操作、可及性 | 有 UI 影響時 |
+| migration / DB tools | 升級、資料驗證與恢復 | 有資料變更時 |
+
+## 本工作流 repository
+
+- Runtime：Node.js 22，僅標準函式庫，無 npm install 步驟。
+- 模板與連結驗證：`node scripts/validate-workflow.mjs`。
+- 自動測試：`node --test tests/*.test.mjs`。
+- 真實任務狀態：`node scripts/validate-workflow.mjs --require-active`。
+- 本 repo 不含產品 UI、資料庫或部署服務，不能宣稱跑過產品 E2E。
+
+## 導入專案時替換
+
+React 介面資源選型見 [React 精選資源](frontend-resource-map.md)：按需使用 shadcn/ui、ReUI、Magic UI、React Bits。它們是產品元件候選，不是本工作流 repository 的執行依賴。
+
+記錄每類檢查的實際命令、工作目錄、runtime／lockfile、必要環境、成功條件與 N/A 原因。執行失敗或環境不可用記 blocked／fail，不能用預計命令代替執行結果。不要把 secrets 寫入檔案或 log。
+
+## NotFound404 產品工具（2026-11-06）
+
+工作目錄為專案根目錄。Node.js 24.20.0，網站無第三方套件，無 lockfile。啟動 `node website/server.mjs`；unit/server 測試 `node --test website/tests/*.test.mjs`。
+瀏覽器使用已安裝 playwright-cli 0.1.18 與 Microsoft Edge：先開 studio session 連到 127.0.0.1:4174，再執行 `powershell -NoProfile -File website/tests/run-browser-tests.ps1`。封裝器會對 CLI error 或缺少 passed:true 回傳非零。
+前端無編譯、TypeScript、DB、migration，build/type/migration 不適用。未要求 lint。此產品測試與上游 tests/*.test.mjs 分開。
